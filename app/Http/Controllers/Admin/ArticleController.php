@@ -45,11 +45,21 @@ class ArticleController extends Controller
 
     public function postFormArticle(PostRequest $request)
     {
+        
+        if ($request->hasfile('image')){
+            $file = $request->file('image');
+            $extension = $file->getClientOriginalExtension();
+            $filename = time().'.'.$extension;
+            $file ->move('uploads', $filename );
+        }else{
+            $filename = '';
+        }
        //  $imagePath = request('image')->postFormArticle('uploads', 'public');
         $inputs = array_merge( ['titre' =>$request->input('titre'),
          'contenu' => $request->input('contenu'),
          'chapeau'=> $request->input('chapeau'),
          'enligne'=>$request->input('ligne'),
+         'image'=> $filename ,
          'categorie_id'=>$request->input('categorie'),
          'user_id' => $request->user()->id]);
     

@@ -9,7 +9,7 @@ class Article extends Model
 
     protected $table = 'articles';
     public $timestamps = true;
-    protected $fillable = ['titre','user_id', 'enligne','categorie_id','contenu', 'chapeau'];
+    protected $fillable = ['titre','user_id', 'enligne','categorie_id','contenu', 'chapeau','image'];
 
     
 

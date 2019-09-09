@@ -37,7 +37,7 @@
                 <select name="categorie" class="form-control">
                   <option value="">Selectionnez une valeur</option>
                   @foreach($categories as $cat)
-                    <option value="{{ $cat->id }}">{{ $cat->nom }}</option>
+                    <option value="{{ $cat->nom }}">{{ $cat->nom }}</option>
                   @endforeach   
                 </select>
 
@@ -78,14 +78,10 @@
 
               <label for="contenu">Contenu</label>
 
-                <textarea name="contenu" class="form-control form-control-user  @error('contenu') is-valid @enderror" id="contenu" aria-describedby="nomHelp" placeholder="Entrer le contenu de l'article" value="{{ old('contenu') }}" required autocomplete="contenu" autofocus></textarea>
-                @error('contenu')
-                <span class="invalid-feedback" role="alert">
-                    <strong>{{ $message }}</strong>
-                </span>
-                @enderror
+                <textarea name="contenu" class="form-control form-control-user  @error('contenu') is-valid @enderror" id="contenu" aria-describedby="nomHelp" placeholder="Entrer le contenu de l'article" value="{{ old('contenu') }}"></textarea>
+
                 <script>
-                 /* ClassicEditor
+                  ClassicEditor
                       .create( document.querySelector( '#contenu' ) )
                       .then( editor => {
                           console.log( editor );

@@ -11,13 +11,12 @@
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/','IndexController@index');
 
 /* debut des routes pour la pages static_ */
 
-Route::view('index', 'index');
+Route::view('index', 'IndexController@index');
+Route::view('index', 'IndexController@perso');
 Route::view('numerisation', 'static_pages/numerisation');
 Route::view('formation', 'static_pages.formation');
 Route::view('oaw', 'static_pages.oaw');
@@ -26,6 +25,9 @@ Route::view('espace_membre', 'static_pages.espace_membre');
 Route::view('be', 'static_pages.be');
 Route::view('contact', 'static_pages.contact');
 Route::view('details', 'full_article');
+Route::get('sandra', 'sandraController@lagama')->name('sandra');
+
+
 
 /* fin des routes pour la pages static_ */
 

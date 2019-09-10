@@ -78,14 +78,14 @@
 
               <label for="contenu">Contenu</label>
 
-                <textarea name="contenu" class="form-control form-control-user  @error('contenu') is-valid @enderror" id="contenu" aria-describedby="nomHelp" placeholder="Entrer le contenu de l'article" value="{{ old('contenu') }}" required autocomplete="contenu" autofocus></textarea>
+                <textarea name="contenu" class="form-control form-control-user  @error('contenu') is-valid @enderror" id="contenu" aria-describedby="nomHelp" placeholder="Entrer le contenu de l'article" value="{{ old('contenu') }}" ></textarea>
                 @error('contenu')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
                 </span>
                 @enderror
                 <script>
-                 /* ClassicEditor
+                  ClassicEditor
                       .create( document.querySelector( '#contenu' ) )
                       .then( editor => {
                           console.log( editor );

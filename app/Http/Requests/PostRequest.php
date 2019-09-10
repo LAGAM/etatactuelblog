@@ -25,8 +25,8 @@ class PostRequest extends FormRequest
     {
         return [
             'titre' => ['required', 'string', 'max:255'],
-            'contenu' => ['required', 'string', 'max:255'],
-            'chapeau' => ['required', 'string', 'max:255'],
+            'contenu' => ['required', 'string'],
+            'chapeau' => ['required', 'string'],
             'ligne' => ['required', 'integer'],
             'categorie'=> ['required', 'integer'],
             'image'=> ['image'],

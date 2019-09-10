@@ -25,6 +25,7 @@ Route::view('contact', 'static_pages.contact');
 Route::view('details', 'full_article');
 Route::get('sandra{id}', 'sandraController@lagama')->name('sandra');
 Route::view('index', 'IndexController@index');
+Route::post('comment', 'CommentController@postComment')->name('comment');
 
 /* fin des routes pour la pages static_ */
 

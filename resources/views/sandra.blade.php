@@ -222,28 +222,21 @@
 	
 						<!-- Form for respond -->
 						<div id="respond" class="comment-respond">
-							<h3 id="reply-title" class="comment-reply-title">Leave a comment <small><a rel="nofollow" id="cancel-comment-reply-link" href="#respond" style="display:none;">Cancel reply</a></small></h3>
-							<form action="#" method="post" id="commentform" class="comment-form">
+							<h3 id="reply-title" class="comment-reply-title">Laisser un commentaire <small><a rel="nofollow" id="cancel-comment-reply-link" href="#respond" style="display:none;">Cancel reply</a></small></h3>
+							<form action="{{route('comment')}}" method="post" id="commentform" class="comment-form">
+
+								@csrf
 								<p class="comment-form-author">
-									<label for="author" class="required">Name <span class="required">(required)</span></label>
-									<input id="author" name="author" value="" size="30" aria-required="true" type="text">
-								</p>
-								<p class="comment-form-email">
-									<label for="email" class="required">Email <span class="required">(required)</span></label>
-									<input id="email" name="email" value="" size="30" aria-required="true" type="text">
-								</p>
-								<p class="comment-form-website clearboth">
-									<label for="url" class="optional">Website <span class="optional">(optional)</span></label>
-									<input id="url" name="url" value="" size="30" aria-required="true" type="text">
+									<label for="author" class="required">Nom <span class="required">(requis)</span></label>
+									<input id="author" name="author" size="30" aria-required="true" type="text">
 								</p>
 								<p class="comment-form-comment">
-									<label for="comment" class="required">Your Message <span class="required">(required)</span></label>
+									<label for="comment" class="required">Votre message <span class="required">(requis)</span></label>
 									<textarea id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea>
 								</p>
 								<p class="form-submit">
 									<input name="submit" id="submit" value="Submit" type="submit">
-									<input name="comment_post_ID" value="1" id="comment_post_ID" type="hidden">
-									<input name="comment_parent" id="comment_parent" value="0" type="hidden">
+									<input name="comment_article_ID" value="{{$articles->id}}" id="comment_article_ID" type="hidden">
 								</p>
 							</form>
 						</div>

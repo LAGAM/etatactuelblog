@@ -38,7 +38,7 @@ class CommentController extends Controller
     
         $this->commentRepository->store($inputs);
     
-        return redirect(route('welcome'));
+        return redirect()->back();
 
     }
 }

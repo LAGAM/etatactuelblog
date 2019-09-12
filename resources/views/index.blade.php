@@ -141,9 +141,11 @@
 						<div class="post_info post_info_2">
 							
 							<span class="post_author">Posté par: 
+								
 								<a href="author.html" class="post_author">
 									
 								</a>
+								
 							</span>
 							
 							<span class="post_info_delimiter"></span>
@@ -157,7 +159,7 @@
 						</div>
 						<div class="post_content">
 							<p>{{ $article->chapeau }}</</p>
-							<div class="readmore"><a href="{{route('sandra', [$article->id])}} " class="more-link">Lire la suite</a></div>
+							<div class="readmore"><a href="{{route('voireplus', [$article->id])}} " class="more-link">Lire la suite</a></div>
 						</div>
 						<div class="post_info post_info_3 clearboth">
 							<span class="post_tags">

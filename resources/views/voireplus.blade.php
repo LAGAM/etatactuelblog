@@ -36,9 +36,7 @@
 						</div>
 
 						<div class="post_info post_info_2">
-							@foreach($users as $user)
-							<span class="post_author">Posté par: <a href="author.html" class="post_author">{{$user->nom}}</a></span>
-							@endforeach
+							
 							<span class="post_info_delimiter"></span>
 							<span class="post_categories">
 								<span class="cats_label">Categories:</span>
@@ -151,25 +149,28 @@
 	
 						<!-- List of comments -->
 						<div class="subtitle_area">
-							<h2 class="post_subtitle">Commentaires <span>(3)</span></h2>
+
+							<h2 class="post_subtitle">Commentaires <span>({{$commentaires->count()}})</span></h2>
+
 						</div>
-						
+						@foreach($commentaires as $com)
 						<ol class="comment-list">
 							<li id="comment-2" class="comment even depth-1">
 								<div class="extra_wrap">
 									<div class="comment_title_area">
-										<h4 class="comment_title"><a href="author.html"></a></h4>
+										<h4 class="comment_title"> {{$com->nom_auteur_comment}}<a href="author.html"></a></h4>
 										<span class="comment_reply"><span class="icon-reply"></span><a class="comment-reply-link" href="?replytocom=2#respond" onclick='return addComment.moveForm("comment-2", "2", "respond", "14")'>Reply</a></span>
 									</div>
 									<div class="post_info">
-										<div class="comment_date"><span class="icon-clock"></span>73 days ago</div>
+										<div class="comment_date"><span class="icon-clock"></span></div>
 									</div>
 									<div class="comment_content">
-										<p></p>
+										<p>{{$com->contenu}}</p>
 									</div>
 								</div>
 							</li>
 						</ol>
+						@endforeach
 						
 						<!-- /List of comments -->
 	

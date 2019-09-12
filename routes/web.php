@@ -23,8 +23,8 @@ Route::view('espace_membre', 'static_pages.espace_membre')->name('espace_membre'
 Route::view('be', 'static_pages.be')->name('be');
 Route::view('contact', 'static_pages.contact')->name('contact');
 Route::view('details', 'full_article')->name('detail');
-Route::get('sandra{id}', 'sandraController@lagama')->name('sandra');
-Route::view('index', 'IndexController@index')->name('index');
+Route::get('voireplus{id}', 'voireplusController@voireplus')->name('voireplus');
+Route::get('index', 'IndexController@index')->name('index');
 Route::post('comment', 'CommentController@postComment')->name('comment');
 
 /* fin des routes pour la pages static_ */

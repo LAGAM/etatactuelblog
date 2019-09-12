@@ -139,12 +139,13 @@
 							<h1 class="post_title"><a href="post-standard-b1.html">{{ $article->titre }}</a></h1>
 						</div>
 						<div class="post_info post_info_2">
+							
 							<span class="post_author">Posté par: 
 								<a href="author.html" class="post_author">
-									{{ $article->user_id}}
+									
 								</a>
 							</span>
-
+							
 							<span class="post_info_delimiter"></span>
 							<span class="post_categories">
 								<span class="cats_label">Categories: </span>
@@ -235,7 +236,7 @@
 
 					<!-- Recent posts -->
 					<aside class="widget-number-4 widget widget_recent_posts">
-						<h3 class="widget_title">Recent posts</h3>
+						<h3 class="widget_title">Articles recent</h3>
 						<div class="post_item first">
 							<div class="pic_wrapper image_wrapper"><img alt="This is a Standard post" src="http://placehold.it/73x44" height="44" width="73"></div>
 							<div class="post_wrapper">

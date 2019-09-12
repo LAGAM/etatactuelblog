@@ -151,13 +151,11 @@
 	
 						<!-- List of comments -->
 						<div class="subtitle_area">
-							<h2 class="post_subtitle">Comments <span>(3)</span></h2>
+							<h2 class="post_subtitle">Commentaires <span>(3)</span></h2>
 						</div>
+						
 						<ol class="comment-list">
 							<li id="comment-2" class="comment even depth-1">
-								<div class="comment_author_avatar_wrapper">
-									<div class="comment_author_avatar pic_wrapper image_wrapper"><img alt="" src="http://placehold.it/50x50" class="avatar avatar-50 photo" height="50" width="50"></div>
-								</div>
 								<div class="extra_wrap">
 									<div class="comment_title_area">
 										<h4 class="comment_title"><a href="author.html"></a></h4>
@@ -167,57 +165,12 @@
 										<div class="comment_date"><span class="icon-clock"></span>73 days ago</div>
 									</div>
 									<div class="comment_content">
-										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed 
-										do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim 
-										ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut 
-										aliquip ex ea commodo consequat.</p>
+										<p></p>
 									</div>
 								</div>
 							</li>
-							<ul class="children">
-								<li id="comment-4" class="comment odd alt depth-2">
-									<div class="comment_author_avatar_wrapper">
-										<div class="comment_author_avatar pic_wrapper image_wrapper"><img alt="" src="http://placehold.it/50x50" class="avatar avatar-50 photo" height="50" width="50"></div>
-									</div>
-									<div class="extra_wrap">
-										<div class="comment_title_area">
-											<h4 class="comment_title">Martha Stewart</h4>
-											<span class="comment_reply"><span class="icon-reply"></span><a class="comment-reply-link" href="?replytocom=4#respond" onclick='return addComment.moveForm("comment-4", "4", "respond", "14")'>Reply</a></span>
-										</div>
-										<div class="post_info">
-											<div class="comment_date"><span class="icon-clock"></span>73 days ago</div>
-										</div>
-										<div class="comment_content">
-											<p>Sed do eiusmod tempor incididunt ut labore et dolore magna 
-											aliqua. Ut enim minim veniam, quis nostrud exercitation ullamco laboris 
-											nisi ut aliquip ex ea commodo consequat.</p>
-										</div>
-									</div>
-								</li>
-								<ul class="children">
-									<li id="comment-5" class="comment even depth-3">
-										<div class="comment_author_avatar_wrapper">
-											<div class="comment_author_avatar pic_wrapper image_wrapper"><img alt="" src="http://placehold.it/50x50" class="avatar avatar-50 photo" height="50" width="50"></div>
-										</div>
-										<div class="extra_wrap">
-											<div class="comment_title_area">
-												<h4 class="comment_title">Jessica Brown</h4>
-												<span class="comment_reply"><span class="icon-reply"></span><a class="comment-reply-link" href="?replytocom=5#respond" onclick='return addComment.moveForm("comment-5", "5", "respond", "14")'>Reply</a></span>
-											</div>
-											<div class="post_info">
-												<div class="comment_date"><span class="icon-clock"></span>73 days ago</div>
-											</div>
-											<div class="comment_content">
-												<p>Ut enim ad minim veniam, quis nostrud exercitation ullamco 
-												laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor 
-												in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
-												pariatur.</p>
-											</div>
-										</div>
-									</li>
-								</ul>
-							</ul>
 						</ol>
+						
 						<!-- /List of comments -->
 	
 						<!-- Form for respond -->

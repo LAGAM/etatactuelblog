@@ -2726,6 +2726,9 @@ a img {
 	margin:0 0 30px 30px;
 	float:left;
 }
+#footer_sidebar_inner .newsletter{
+	width: 500px;
+}
 #footer_sidebar_inner .widget:first-child,
 #footer_sidebar_inner .widget.widget-number-1,
 #footer_sidebar_inner .widget.widget-number-5,
@@ -2739,7 +2742,7 @@ a img {
 	padding-bottom:16px;
 	margin-bottom:16px;
 	text-transform:uppercase;
-	color:#12A650;
+	color:#fa7f2a;
 	overflow:hidden;
 	position:relative;
 }
@@ -2750,7 +2753,7 @@ a img {
 	bottom:0;
 	height:0;
 	width:60px;
-	border-bottom:2px solid #91278E;
+	border-bottom:2px solid #2a66fa;
 }
 
 #footer_sidebar_inner .widget ul {
@@ -2761,6 +2764,9 @@ a img {
 	padding: 6px 0 6px 27px;
 	position:relative;
 	border-bottom:1px solid #3f3f3f;
+}
+#footer_sidebar_inner aside, #footer_sidebar_inner .widget-number-2 p a{
+	color: black;
 }
 #footer_sidebar_inner .widget ul li li {
 	border-bottom:none;

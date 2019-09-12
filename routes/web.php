@@ -11,20 +11,20 @@
 |
 */
 
-Route::get('/','IndexController@index');
+Route::get('/','IndexController@index')->name('index');
 
 /* debut des routes pour la pages static_ */
 
-Route::view('numerisation', 'static_pages/numerisation');
-Route::view('formation', 'static_pages.formation');
-Route::view('oaw', 'static_pages.oaw');
-Route::view('bibliotheque', 'static_pages.bibliotheque');
-Route::view('espace_membre', 'static_pages.espace_membre');
-Route::view('be', 'static_pages.be');
-Route::view('contact', 'static_pages.contact');
-Route::view('details', 'full_article');
+Route::view('numerisation', 'static_pages/numerisation')->name('numerisation');
+Route::view('formation', 'static_pages.formation')->name('formation');
+Route::view('oaw', 'static_pages.oaw')->name('oaw');
+Route::view('bibliotheque', 'static_pages.bibliotheque')->name('bibliotheque');
+Route::view('espace_membre', 'static_pages.espace_membre')->name('espace_membre');
+Route::view('be', 'static_pages.be')->name('be');
+Route::view('contact', 'static_pages.contact')->name('contact');
+Route::view('details', 'full_article')->name('detail');
 Route::get('sandra{id}', 'sandraController@lagama')->name('sandra');
-Route::view('index', 'IndexController@index');
+Route::view('index', 'IndexController@index')->name('index');
 Route::post('comment', 'CommentController@postComment')->name('comment');
 
 /* fin des routes pour la pages static_ */

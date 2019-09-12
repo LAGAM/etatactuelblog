@@ -49,26 +49,26 @@
 			<div id="header_middle_wrapper">
 				<div id="header_middle">
 					<div id="header_middle_inner">
-						<div class="logo_default"><a href="index"><img src="template/images/logo_uvci.png" style="margin-top:-15px;"></a></div>
+						<div class="logo_default"><a href="{{route('index')}}"><img src="template/images/logo_uvci.png" style="margin-top:-15px;"></a></div>
 						<nav id="mainmenu_area" class="mainmenu_area" role="navigation">
 							<ul id="mainmenu" class="sf-js-enabled">
-								<li class="menu-item"><a href="index">Accueil</a>	
+								<li class="menu-item"><a href="{{route('index')}}">Accueil</a>	
 								</li>
 								<li class="menu-item"><a href="#">Activités</a>
 									<ul style="display: none;" class="sub-menu">
-										<li class="menu-item"><a href="numerisation">numerisation de these</a></li>
-										<li class="menu-item"><a href="formation">formation bibliothequaire, enseignent chercheur</a></li>
-										<li class="menu-item"><a href="oaw">semaine open access week</a></li>
+										<li class="menu-item"><a href="{{route('numerisation')}}">numerisation de these</a></li>
+										<li class="menu-item"><a href="{{route('formation')}}">formation bibliothequaire, enseignent chercheur</a></li>
+										<li class="menu-item"><a href="{{route('oaw')}}">semaine open access week</a></li>
 									</ul>
 								</li>
 								<li class="menu-item"><a href="#">Bibliothèque Virtuelle</a>
 									<ul style="display: none;" class="sub-menu">
-										<li class="menu-item"><a href="bibliotheque">presentation historique comment y acceder</a></li>
-										<li class="menu-item"><a href="espace_membre">espace membre</a></li>
-										<li class="menu-item"><a href="be">Bibliothèque educative</a></li>
+										<li class="menu-item"><a href="{{route('bibliotheque')}}">presentation </a></li>
+										<li class="menu-item"><a href="{{route('espace_membre')}}">espace membre</a></li>
+										<li class="menu-item"><a href="{{route('be')}}">Bibliothèque educative</a></li>
 									</ul>
 								</li>
-                                <li class="menu-item"><a href="contact">Contact Us</a></li>
+                                <li class="menu-item"><a href="{{route('contact')}}">Contact</a></li>
 								
 							</ul>
                         </nav>
@@ -95,19 +95,23 @@
 							<a href="http://www.campus.uvci.edu.ci" target="_blank" title="campus uvci">Site du campus de l'UVCI</a><br/>
 							<a href="http://www.scolarite.uvci.edu.ci" target="_blank" title="scolarité uvci">Site la scolarité de l'UVCI</a><br/>
 							<a href="http://www.biblio.edu.ci" target="_blank" title="bibliotheque virtuelle">Site de la bibliotheque virtuelle</a>
-						</p><
+						</p>
 					</aside>
 					
 					
-					<aside class="widget-number-4 widget widget_flickr">
-						<h3 class="widget_title">Liens externes</h3>	
-					</aside>
-					<aside class="widget-number-4 widget widget_flickr">
-						<h3 class="widget_title">Liens externes</h3>	
+					<aside class="widget-number-4 widget newsletter">
+						<h3 class="widget_title">La Newsletter</h3>	
+						<form action="#" method="post">
+							<div class="form-group">
+								<label for="email">Email :</label>
+								<input type="email" required class="form-control" style="border-radius: 8px;margin-left: 5px; width: 350px; height: 2.2em; background:#ddd; border: 1px solid #bcbbbb;">
+							</div><br/>
+							<input type="submit" value="S'abonner" style="border-radius: 8px; height: 2.2em; background: #2a66fa; color:#ddd;">
+						</form>
 					</aside>
 					<aside class="widget-number-4 widget widget_flickr">
 						<h3 class="widget_title">Contacts</h3>
-						<p style="color:#000; font-weight:bold;">Addresse: Abidjan Cocody II plateaux,<br/>
+						<p style="color:#000;s">Addresse: Abidjan Cocody II plateaux,<br/>
 						 Boite Postale: 28 BP 536 ABIDJAN 28<br/>
 						 Téléphone: (+225) 22515147 / 42222200<br/>
 						 Email: contact@example.com</p>	

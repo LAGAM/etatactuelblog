@@ -29,11 +29,6 @@ class Article extends Model
         return $this->hasMany('App\Commentaire');
     }
 
-   /* public function medias()
-    {
-        return $this->hasMany('App\Media');
-    }*/
-
     public function tags()
     {
         return $this->belongsToMany('App\Tag');

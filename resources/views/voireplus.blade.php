@@ -135,24 +135,25 @@
 
 						</div>
 						@foreach($commentaires as $com)
-						<ol class="comment-list">
-							<li id="comment-2" class="comment even depth-1">
+						<ul class="children">
+							<li id="comment-4" class="comment odd alt depth-2">
+								<div class="comment_author_avatar_wrapper">
+									<div class="comment_author_avatar pic_wrapper image_wrapper"><img src="template/images/user.png"></div>
+								</div>
 								<div class="extra_wrap">
 									<div class="comment_title_area">
-										<h4 class="comment_title"> {{$com->nom_auteur_comment}}<a href="author.html"></a></h4>
-										<span class="comment_reply"><span class="icon-reply"></span><a class="comment-reply-link" href="?replytocom=2#respond" onclick='return addComment.moveForm("comment-2", "2", "respond", "14")'>Reply</a></span>
+										<h4 class="comment_title">{{$com->nom_auteur_comment}}</h4>
 									</div>
-									<div class="post_info">
-										<div class="comment_date"><span class="icon-clock"></span></div>
-									</div>
+									<!-- <div class="post_info">
+										<div class="comment_date"><span class="icon-clock"></span>73 days ago</div>
+									</div> -->
 									<div class="comment_content">
-										<textarea class="ck-content">{{$com->contenu}}</textarea>
+										<p>{{$com->contenu}}</p>
 									</div>
 								</div>
 							</li>
-						</ol>
-						@endforeach
-						
+						</ul>
+						@endforeach						
 						<!-- /List of comments -->
 	
 						<!-- Form for respond -->
@@ -231,70 +232,37 @@
 
 					<!-- Recent posts -->
 					<aside class="widget-number-4 widget widget_recent_posts">
-						<h3 class="widget_title">Recent posts</h3>
+						<h3 class="widget_title">Articles récents</h3>
+						@foreach($recentArt as $recent)
 						<div class="post_item first">
-							<div class="pic_wrapper image_wrapper"><img alt="This is a Standard post" src="http://placehold.it/73x44" height="44" width="73"></div>
+							<div class="pic_wrapper image_wrapper"><img alt="This is a Standard post" src="{{ url('uploads/'.$recent->image) }}" height="44" width="73"></div>
 							<div class="post_wrapper">
-								<h4 class="post_title"><a href="post-standard-b1.html">This is a Standard post</a></h4>
-								<div class="post_author">By: <a href="author.html">John Snow</a></div>
+								<h4 class="post_title"><a href="post-standard-b1.html">{{$recent->titre}}</a></h4>
+								<!-- <div class="post_author">De: <a href="author.html"></a></div> -->
 								<div class="post_info">
-									<span class="post_date">June 24, 2013</span>
+									<span class="post_date">{{date('M d , Y'), strtotime($recent->created_at)}}</span>
 									<span class="post_info_delimiter"></span>
-									<span class="post_comments"><a href="post-standard-b1.html#comments"><span class="icon-comment"></span><span class="post_comments_number">3</span></a></span>
+									
 								</div>
 							</div>
 						</div>
-						<div class="post_item">
-							<div class="pic_wrapper image_wrapper"><img alt="Awesome Slider Post" src="http://placehold.it/73x44" height="44" width="73"></div>
-							<div class="post_wrapper">
-								<h4 class="post_title"><a href="post-gallery-b1.html">Awesome Slider Post</a></h4>
-								<div class="post_author">By: <a href="author.html">John Snow</a></div>
-								<div class="post_info">
-									<span class="post_date">May 30, 2013</span>
-									<span class="post_info_delimiter"></span>
-									<span class="post_comments"><a href="post-gallery-b1.html#comments"><span class="icon-comment"></span><span class="post_comments_number">0</span></a></span>
-								</div>
-							</div>
-						</div>
-						<div class="post_item">
-							<div class="pic_wrapper image_wrapper"><img alt="Another Gallery post" src="http://placehold.it/73x44" height="44" width="73"></div>
-							<div class="post_wrapper">
-								<h4 class="post_title"><a href="post-gallery-b1.html">Another Gallery post</a></h4>
-								<div class="post_author">By: <a href="author.html">admin</a></div>
-								<div class="post_info">
-									<span class="post_date">May 1, 2013</span>
-									<span class="post_info_delimiter"></span>
-									<span class="post_comments"><a href="post-gallery-b1.html#comments"><span class="icon-comment"></span><span class="post_comments_number">0</span></a></span>
-								</div>
-							</div>
-						</div>
-						<div class="post_item">
-							<div class="pic_wrapper image_wrapper"><img alt="This is an Audio post" src="http://placehold.it/73x44" height="44" width="73"></div>
-							<div class="post_wrapper">
-								<h4 class="post_title"><a href="post-audio-b1.html">This is an Audio post</a></h4>
-								<div class="post_author">By: <a href="author.html">John Snow</a></div>
-								<div class="post_info">
-									<span class="post_date">April 17, 2013</span>
-									<span class="post_info_delimiter"></span>
-									<span class="post_comments"><a href="post-audio-b1.html#comments"><span class="icon-comment"></span><span class="post_comments_number">0</span></a></span>
-								</div>
-							</div>
-						</div>
+						@endforeach
+						
 					</aside>
 					<!-- /Recent posts -->
 					
 					<!-- Archives -->
-					<aside class="widget-number-5 widget widget_archive">
+					<!-- <aside class="widget-number-5 widget widget_archive">
 						<h3 class="widget_title">Archives</h3>
 						<ul>
-							<li><a href="archives.html" title="June 2013">June 2013</a></li>
-							<li><a href="archives.html" title="May 2013">May 2013</a></li>
-							<li><a href="archives.html" title="April 2013">April 2013</a></li>
-							<li><a href="archives.html" title="March 2013">March 2013</a></li>
-							<li><a href="archives.html" title="February 2013">February 2013</a></li>
-							<li><a href="archives.html" title="January 2013">January 2013</a></li>
+							<li><a href="#" title="June 2013">June 2013</a></li>
+							<li><a href="#" title="May 2013">May 2013</a></li>
+							<li><a href="#" title="April 2013">April 2013</a></li>
+							<li><a href="#" title="March 2013">March 2013</a></li>
+							<li><a href="#" title="February 2013">February 2013</a></li>
+							<li><a href="#" title="January 2013">January 2013</a></li>
 						</ul>
-					</aside>
+					</aside> -->
 					<!-- /Archives -->
 
 				</div>
@@ -304,4 +272,5 @@
 			</div><!-- #main_inner -->
 
 	    </div>
+
 @endsection

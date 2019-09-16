@@ -15,5 +15,4 @@ class Commentaire extends Model
     {
         return $this->belongsTo('App\Article');
     }
-
 }

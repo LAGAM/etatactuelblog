@@ -21,13 +21,12 @@ class IndexController extends Controller
     
 
     $data['categories'] = Categorie::all();
-    /*$art = DB::table('articles')->first('user_id');*/
     
-   	$article = DB::table('articles')->orderBy('articles.created_at', 'desc')->simplePaginate(3);
-   	/*$user = DB::table('users')->where('id','=', $art->user_id)->get();*/
-   	
+
+   	$article = Article::orderBy('articles.created_at', 'desc');
+    $data['articles'] = $article->simplePaginate(5);
        	
-	return view('index', ['articles' =>$article])->with($data);
+	  return view('index')->with($data);
 
     }
 }

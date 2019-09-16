@@ -27,8 +27,11 @@
 
 						<div class="post_info_1">
 							<div class="post_format"><span class="icon-pencil"></span></div>
-							<div class="post_date"><span class="day"></span><span class="month"></span></div>
-	                        <div class="post_comments"><a href="#comments"><span class="comments_number">3</span><span class="icon-comment"></span></a></div>
+							<div class="post_date">
+								<span class="day">{{date('d'), strtotime($articles->updated_at)}}</span>
+								<span class="month">{{date('M'), strtotime($articles->updated_at)}}</span>
+							</div>
+	                        <div class="post_comments"><a href="#comments"><span class="comments_number">{{$commentaires->count()}}</span><span class="icon-comment"></span></a></div>
 						</div>
 
 						<div class="title_area">
@@ -36,11 +39,13 @@
 						</div>
 
 						<div class="post_info post_info_2">
-							
+							<span class="post_author">Posté par:
+								<a href="#" class="post_author">{{$users->nom}}</a>
+							</span>
 							<span class="post_info_delimiter"></span>
 							<span class="post_categories">
 								<span class="cats_label">Categories:</span>
-                                    <a class="cat_link" href="#"></a>																						
+                                    <a class="cat_link" href="#"></a>							
 							</span>
 						</div>
 
@@ -49,7 +54,7 @@
 						</div>
 
 						<div class="post_content">
-							<p>{{$articles->contenu}}</p>
+							<p>{!! $articles->contenu !!}</p>
 						</div>
 
 	                    <div class="post_info post_info_3 clearboth">
@@ -60,30 +65,6 @@
 							</span>
 						</div>
 
-						<div class="post_social">
-							<span class="social_label">Share this Story</span><!--
-							--><a href="#" class="social dribbble" target="_blank"><span class="icon-dribbble"></span></a><!--
-							--><a href="#" class="social linkedin" target="_blank"><span class="icon-linkedin"></span></a><!--
-							--><a href="#" class="social gplus" target="_blank"><span class="icon-gplus"></span></a><!--
-							--><a href="#" class="social twitter" target="_blank"><span class="icon-twitter"></span></a><!--
-							--><a href="#" class="social facebook" target="_blank"><span class="icon-facebook"></span></a>
-						</div>
-
-						<div class="post_author_details">
-							<div class="post_author_avatar_wrapper">
-								<div class="post_author_avatar pic_wrapper image_wrapper"><a href="author.html"><img alt="" src="http://placehold.it/50x50" class="avatar avatar-50 photo" height="50" width="50"></a></div>
-							</div>
-							<div class="extra_wrap">
-								<h3 class="author_name"><a href="author.html"><span>About the Author</span></a></h3>
-								<div class="author_description"><p>Etiam ut mattis orci, a 
-									tristique risus. Praesent scelerisque eu urna quis scelerisque. Aenean 
-									ut leo mattis, aliquet tellus in, placerat risus. Curabitur ultrices 
-									imperdiet convallis. Nam scelerisque, augue at feugiat cursus, lorem 
-									justo hendrerit justo, et mattis enim diam vel ipsum.</p>
-								</div>
-							</div>	
-						</div>
-
 					</article>
 
 
@@ -91,7 +72,7 @@
 					<div id="related_posts">
 						
 						<div class="subtitle_area">
-							<h2 class="post_subtitle">Related posts</h2>
+							<h2 class="post_subtitle">Articles Similaire</h2>
 						</div>
 						
 						<div class="related_posts_item odd first">
@@ -165,7 +146,7 @@
 										<div class="comment_date"><span class="icon-clock"></span></div>
 									</div>
 									<div class="comment_content">
-										<p>{{$com->contenu}}</p>
+										<textarea class="ck-content">{{$com->contenu}}</textarea>
 									</div>
 								</div>
 							</li>

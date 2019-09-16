@@ -24,6 +24,8 @@
 		<link rel="stylesheet" href="template/js/colorpicker/colorpicker.css" type="text/css" media="all" />
 
 		<link rel="stylesheet" href="template/js/jreject/css/jquery.reject.css" type="text/css" media="all" />
+
+		<link rel="stylesheet" href="template/css/content-styles.css" type="text/css">
 	
 		<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 		<script type="text/javascript" src="template/js/jquery-migrate.js"></script>

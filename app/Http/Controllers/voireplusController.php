@@ -17,13 +17,8 @@ class voireplusController extends Controller
     	$article = Article::where('id', '=', $id)->first();
         $data['articles'] = $article;
         $data['commentaires'] = Commentaire::where('article_id','=', $article->id)->get();
-
-    	/*dd($commentaires);*/
-    	
-    	$user = User::where('id', '=', $article->user_id)->get();
-    	/* $categorie = DB::table('categories')->where('id', '=', $article->categorie_id)->get('nom'); */
-
-    	
+        $user = User::where('id', '=', $article->user_id)->first();
+        $data['users'] = $user;    	
 
     	 return view('voireplus')->with($data);
     }

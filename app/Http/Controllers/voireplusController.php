@@ -15,16 +15,21 @@ class voireplusController extends Controller
 
     	$data['categories'] = Categorie::all();
 
-    	$recentArt = Article::orderBy('created_at', 'desc')->get()->take(4);    	
+    	$recentArt = Article::orderBy('created_at', 'desc')->get()->take(4); 
+
 
     	$article = Article::where('id', '=', $id)->first();
         $data['articles'] = $article;
+
+         $simArt = Article::where('categorie_id','=',$article->categorie_id)->get()->take(3);
+            
+
 
         $data['commentaires'] = Commentaire::where('article_id','=', $article->id)->get();
 
         $user = User::where('id', '=', $article->user_id)->first();
         $data['users'] = $user;    	
 
-    	 return view('voireplus',compact('recentArt'))->with($data);
+    	 return view('voireplus',compact(['recentArt','simArt']))->with($data);
     }
 }

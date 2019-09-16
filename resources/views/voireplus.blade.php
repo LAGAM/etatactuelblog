@@ -74,54 +74,22 @@
 						<div class="subtitle_area">
 							<h2 class="post_subtitle">Articles Similaire</h2>
 						</div>
-						
-						<div class="related_posts_item odd first">
-							<div class="pic_wrapper image_wrapper">
-								<img alt="Awesome Slider Post" src="http://placehold.it/260x160" height="160" width="260">
-								<span class="image_overlay"></span>
-								<a href="post-gallery-b1.html" class="image_link"><span class="icon-link"></span></a>
-								<a href="http://placehold.it/790x391" class="image_zoom prettyPhoto"><span class="icon-search"></span></a>
-							</div>
-							<div class="title_area">
-								<span class="post_comments"><a href="post-gallery-b1.html#comments"><span class="icon-comment"></span><span class="post_comments_number">0</span></a></span>
-								<h4 class="related_posts_title"><a href="post-gallery-b1.html">Awesome Slider Post</a></h4>
-							</div>
-							<div class="post_info">
-								<span class="post_date">May 30, 2013</span>
-							</div>
-						</div>
-
-						<div class="related_posts_item even">
-							<div class="pic_wrapper image_wrapper">
-								<img alt="Another Gallery post" src="http://placehold.it/260x160" height="160" width="260">
-								<span class="image_overlay"></span>
-								<a href="post-gallery-b1.html" class="image_link"><span class="icon-link"></span></a>
-								<a href="http://placehold.it/790x391" class="image_zoom prettyPhoto"><span class="icon-search"></span></a>
-							</div>
-							<div class="title_area">
-								<span class="post_comments"><a href="post-gallery-b1.html#comments"><span class="icon-comment"></span><span class="post_comments_number">0</span></a></span>
-								<h4 class="related_posts_title"><a href="post-gallery-b1.html">Another Gallery post</a></h4>
-							</div>
-							<div class="post_info">
-								<span class="post_date">May 1, 2013</span>
-							</div>
-						</div>
-
+						@foreach($simArt as $sim)
 						<div class="related_posts_item odd last">
 							<div class="pic_wrapper image_wrapper">
-								<img alt="This is an Audio post" src="http://placehold.it/260x160" height="160" width="260">
+								<img alt="Awesome Slider Post" src="{{ url('uploads/'.$sim->image) }}" height="160" width="260">
 								<span class="image_overlay"></span>
-								<a href="post-audio-b1.html" class="image_link"><span class="icon-link"></span></a>
+								<a href="#" class="image_link"><span class="icon-link"></span></a>
 								<a href="http://placehold.it/790x391" class="image_zoom prettyPhoto"><span class="icon-search"></span></a>
 							</div>
 							<div class="title_area">
-								<span class="post_comments"><a href="post-audio-b1.html#comments"><span class="icon-comment"></span><span class="post_comments_number">0</span></a></span>
-								<h4 class="related_posts_title"><a href="post-audio-b1.html">This is an Audio post</a></h4>
+								<h4 class="related_posts_title"><a href="#">{{$sim->titre}}</a></h4>
 							</div>
 							<div class="post_info">
-								<span class="post_date">April 17, 2013</span>
+								<span class="post_date">{{date('M d , Y'), strtotime($sim->updated_at)}}</span>
 							</div>
 						</div>
+						@endforeach
 					</div>
 					<!-- /Related posts -->
 

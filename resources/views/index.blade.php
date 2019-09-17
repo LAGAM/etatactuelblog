@@ -132,7 +132,7 @@
 					<article class="post_format_standard odd">
 						<div class="post_info_1">
 							<div class="post_format"><span class="icon-pencil"></span></div>
-							<div class="post_date"><span class="day">{{date('d'), strtotime($article->updated_at)}}</span><span class="month">{{date('M'), strtotime($article->created_at)}}</span></div>
+							<div class="post_date"><span class="day">{!! $article->created_at->format('d') !!}</span><span class="month">{!! $article->created_at->format('M') !!}</span></div>
 					        <div class="post_comments"><a href="post-standard-b1.html#comments"><span class="comments_number">3</span><span class="icon-comment"></span></a></div>
 			        	</div>
 						<div class="title_area">
@@ -239,54 +239,20 @@
 					<!-- Recent posts -->
 					<aside class="widget-number-4 widget widget_recent_posts">
 						<h3 class="widget_title">Articles recent</h3>
+						@foreach($artRecent as $recent)
 						<div class="post_item first">
-							<div class="pic_wrapper image_wrapper"><img alt="This is a Standard post" src="http://placehold.it/73x44" height="44" width="73"></div>
+							<div class="pic_wrapper image_wrapper"><img alt="This is a Standard post" src="{{ url('uploads/'.$recent->image) }}" height="44" width="73"></div>
 							<div class="post_wrapper">
-								<h4 class="post_title"><a href="post-standard-b1.html">This is a Standard post</a></h4>
-								<div class="post_author">By: <a href="author.html">John Snow</a></div>
+								<h4 class="post_title"><a href="#">{{$recent->titre}}</a></h4>
+								<!-- <div class="post_author">By: <a href="author.html">John Snow</a></div> -->
 								<div class="post_info">
-									<span class="post_date">June 24, 2013</span>
+									<span class="post_date">{{$recent->created_at->format('d M, Y')}}</span>
 									<span class="post_info_delimiter"></span>
-									<span class="post_comments"><a href="post-standard-b1.html#comments"><span class="icon-comment"></span><span class="post_comments_number">3</span></a></span>
+									<!-- <span class="post_comments"><a href="post-standard-b1.html#comments"><span class="icon-comment"></span><span class="post_comments_number">3</span></a></span> -->
 								</div>
 							</div>
 						</div>
-						<div class="post_item">
-							<div class="pic_wrapper image_wrapper"><img alt="Awesome Slider Post" src="http://placehold.it/73x44" height="44" width="73"></div>
-							<div class="post_wrapper">
-								<h4 class="post_title"><a href="post-gallery-b1.html">Awesome Slider Post</a></h4>
-								<div class="post_author">By: <a href="author.html">John Snow</a></div>
-								<div class="post_info">
-									<span class="post_date">May 30, 2013</span>
-									<span class="post_info_delimiter"></span>
-									<span class="post_comments"><a href="post-gallery-b1.html#comments"><span class="icon-comment"></span><span class="post_comments_number">0</span></a></span>
-								</div>
-							</div>
-						</div>
-						<div class="post_item">
-							<div class="pic_wrapper image_wrapper"><img alt="Another Gallery post" src="http://placehold.it/73x44" height="44" width="73"></div>
-							<div class="post_wrapper">
-								<h4 class="post_title"><a href="post-gallery-b1.html">Another Gallery post</a></h4>
-								<div class="post_author">By: <a href="author.html">admin</a></div>
-								<div class="post_info">
-									<span class="post_date">May 1, 2013</span>
-									<span class="post_info_delimiter"></span>
-									<span class="post_comments"><a href="post-gallery-b1.html#comments"><span class="icon-comment"></span><span class="post_comments_number">0</span></a></span>
-								</div>
-							</div>
-						</div>
-						<div class="post_item">
-							<div class="pic_wrapper image_wrapper"><img alt="This is an Audio post" src="http://placehold.it/73x44" height="44" width="73"></div>
-							<div class="post_wrapper">
-								<h4 class="post_title"><a href="post-audio-b1.html">This is an Audio post</a></h4>
-								<div class="post_author">By: <a href="author.html">John Snow</a></div>
-								<div class="post_info">
-									<span class="post_date">April 17, 2013</span>
-									<span class="post_info_delimiter"></span>
-									<span class="post_comments"><a href="post-audio-b1.html#comments"><span class="icon-comment"></span><span class="post_comments_number">0</span></a></span>
-								</div>
-							</div>
-						</div>
+						@endforeach
 					</aside>
 					<!-- /Recent posts -->
 					

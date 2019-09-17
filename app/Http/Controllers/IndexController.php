@@ -21,12 +21,13 @@ class IndexController extends Controller
     
 
     $data['categories'] = Categorie::all();
-    
 
    	$article = Article::orderBy('articles.created_at', 'desc');
     $data['articles'] = $article->simplePaginate(5);
        	
-	  return view('index')->with($data);
+    $artRecent = $article->take(4)->get();
+
+	  return view('index',compact('artRecent'))->with($data);
 
     }
 }

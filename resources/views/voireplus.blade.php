@@ -60,8 +60,9 @@
 	                    <div class="post_info post_info_3 clearboth">
 							<span class="post_tags">
 								<span class="tags_label">Tags:</span>
-								<a class="tag_link" href="tags.html">Clean</a>,
-								<a class="tag_link" href="tags.html">Webdesign</a>
+								@foreach($tags as $ti)
+								<a class="tag_link" href="tags.html">{{$ti->tag}}</a>,
+								@endforeach
 							</span>
 						</div>
 
@@ -80,7 +81,7 @@
 								<img alt="Awesome Slider Post" src="{{ url('uploads/'.$sim->image) }}" height="160" width="260">
 								<span class="image_overlay"></span>
 								<a href="#" class="image_link"><span class="icon-link"></span></a>
-								<a href="http://placehold.it/790x391" class="image_zoom prettyPhoto"><span class="icon-search"></span></a>
+								<a href="{{ url('uploads/'.$sim->image) }}" class="image_zoom prettyPhoto"><span class="icon-search"></span></a>
 							</div>
 							<div class="title_area">
 								<h4 class="related_posts_title"><a href="#">{{$sim->titre}}</a></h4>

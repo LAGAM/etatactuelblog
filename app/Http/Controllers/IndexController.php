@@ -9,7 +9,7 @@ use App\Article;
 use App\User;
 use App\Categorie;
 use App\Commentaire;
-
+use App\Tag;
 use Carbon\Carbon;
 
 
@@ -25,6 +25,8 @@ class IndexController extends Controller
 
    	$article = Article::orderBy('articles.created_at', 'desc');
     $data['articles'] = $article->simplePaginate(5);
+
+    $data['tags'] = Tag::all();
        	
     $artRecent = $article->take(4)->get();
 

@@ -164,8 +164,9 @@
 						<div class="post_info post_info_3 clearboth">
 							<span class="post_tags">
 								<span class="tags_label">Tags:</span>
-								<a class="tag_link" href="tags.html">Clean</a>,
-								<a class="tag_link" href="tags.html">Webdesign</a>
+								@foreach($article->tags as $ot)
+								<a class="tag_link" href="tags.html">{{$ot->tag}}</a>,
+								@endforeach
 							</span>
 						</div>
 					</article>
@@ -214,24 +215,9 @@
 					<aside class="widget-number-3 widget widget_tag_cloud">
 						<h3 class="widget_title">Tags</h3>
 						<div class="tagcloud">
-							<a href="tags.html" title="1 topic"  style="font-size: 8pt;">Audio</a>
-							<a href="tags.html" title="1 topic"  style="font-size: 8pt;">Business</a>
-							<a href="tags.html" title="1 topic"  style="font-size: 8pt;">Clean</a>
-							<a href="tags.html" title="8 topics" style="font-size: 22pt;">Design</a>
-							<a href="tags.html" title="3 topics" style="font-size: 14pt;">Gallery</a>
-							<a href="tags.html" title="3 topics" style="font-size: 14pt;">Media</a>
-							<a href="tags.html" title="1 topic"  style="font-size: 8pt;">Photo</a>
-							<a href="tags.html" title="3 topics" style="font-size: 14pt;">Print</a>
-							<a href="tags.html" title="1 topic"  style="font-size: 8pt;">Quote</a>
-							<a href="tags.html" title="2 topics" style="font-size: 12pt;">SEO</a>
-							<a href="tags.html" title="1 topic"  style="font-size: 8pt;">Service</a>
-							<a href="tags.html" title="1 topic"  style="font-size: 8pt;">Sound</a>
-							<a href="tags.html" title="1 topic"  style="font-size: 8pt;">Support</a>
-							<a href="tags.html" title="3 topics" style="font-size: 14pt;">Themeforest</a>
-							<a href="tags.html" title="1 topic"  style="font-size: 8pt;">Video</a>
-							<a href="tags.html" title="3 topics" style="font-size: 14pt;">Webdesign</a>
-							<a href="tags.html" title="8 topics" style="font-size: 22pt;">Wordpress</a>
-							<a href="tags.html" title="3 topics" style="font-size: 14pt;">WP Space</a>
+							@foreach($tags as $it)
+							<a href="#" title="1 topic"  style="font-size: 8pt;">{{$it->tag}}</a>
+							@endforeach
 						</div>
 					</aside>
 					<!-- /Tags -->

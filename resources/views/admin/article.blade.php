@@ -26,7 +26,7 @@
 
                 <label for="ligne">Publié</label>
 
-                <input type="number" name="ligne" id="ligne" class="">
+                <input type="checkbox" name="ligne" id="ligne" class="">
             </div>
 
 

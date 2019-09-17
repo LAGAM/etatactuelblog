@@ -28,7 +28,10 @@ class voireplusController extends Controller
         $data['commentaires'] = Commentaire::where('article_id','=', $article->id)->get();
 
         $user = User::where('id', '=', $article->user_id)->first();
-        $data['users'] = $user;    	
+        $data['users'] = $user;
+
+        $tag = $article->tags;
+        $data['tags'] = $tag;    	
 
     	 return view('voireplus',compact(['recentArt','simArt']))->with($data);
     }

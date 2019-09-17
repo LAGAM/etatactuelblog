@@ -16,7 +16,7 @@ class Tag extends Model
      * @var array
      */
     protected $fillable = [
-        'nom'
+        'tag', 'tag_url'
     ];
 
     public function articles()

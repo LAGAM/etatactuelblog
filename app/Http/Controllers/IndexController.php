@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Article;
 use App\User;
 use App\Categorie;
+use App\Commentaire;
 
 use Carbon\Carbon;
 

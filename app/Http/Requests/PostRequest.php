@@ -30,6 +30,7 @@ class PostRequest extends FormRequest
             'ligne' => ['required', 'integer'],
             'categorie'=> ['required', 'integer'],
             'image'=> ['image'],
+            'tags' => ['Regex:/^[A-Za-z0-9-éèàù]{1,50}?(,[A-Za-z0-9-éèàù]{1,50})*$/']
         ];
     }
 }

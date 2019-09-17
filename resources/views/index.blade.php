@@ -133,7 +133,7 @@
 						<div class="post_info_1">
 							<div class="post_format"><span class="icon-pencil"></span></div>
 							<div class="post_date"><span class="day">{!! $article->created_at->format('d') !!}</span><span class="month">{!! $article->created_at->format('M') !!}</span></div>
-					        <div class="post_comments"><a href="post-standard-b1.html#comments"><span class="comments_number">3</span><span class="icon-comment"></span></a></div>
+					        <!-- <div class="post_comments"><a href="post-standard-b1.html#comments"><span class="comments_number">3</span><span class="icon-comment"></span></a></div> -->
 			        	</div>
 						<div class="title_area">
 							<h1 class="post_title"><a href="post-standard-b1.html">{{ $article->titre }}</a></h1>

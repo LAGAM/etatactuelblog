@@ -12,6 +12,8 @@ use App\Categorie;
 use App\Repository\PostRepository;
 use App\Http\Requests\PostRequest;
 
+use App\Repository\TagRepository;
+
 
 
 class ArticleController extends Controller
@@ -43,7 +45,7 @@ class ArticleController extends Controller
     
          
 
-    public function postFormArticle(PostRequest $request)
+    public function postFormArticle(PostRequest $request, TagRepository $tagRepository)
     {
         
         if ($request->hasfile('image')){
@@ -63,7 +65,14 @@ class ArticleController extends Controller
          'categorie_id'=>$request->input('categorie'),
          'user_id' => $request->user()->id]);
     
-        $this->postRepository->store($inputs);
+        $essai = $request->input('tags');
+
+        $article = Article::create($inputs);
+
+
+        if(isset($essai)){
+          $tagRepository->store($article, $essai);
+        }
     
         return redirect(route('admin.dashboard'));
     }

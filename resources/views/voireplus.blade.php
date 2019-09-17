@@ -28,8 +28,8 @@
 						<div class="post_info_1">
 							<div class="post_format"><span class="icon-pencil"></span></div>
 							<div class="post_date">
-								<span class="day">{{date('d'), strtotime($articles->updated_at)}}</span>
-								<span class="month">{{date('M'), strtotime($articles->updated_at)}}</span>
+								<span class="day">{{$articles->updated_at->format('d')}}</span>
+								<span class="month">{{$articles->updated_at->format('M')}}</span>
 							</div>
 	                        <div class="post_comments"><a href="#comments"><span class="comments_number">{{$commentaires->count()}}</span><span class="icon-comment"></span></a></div>
 						</div>

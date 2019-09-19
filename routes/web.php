@@ -25,7 +25,11 @@ Route::view('contact', 'static_pages.contact')->name('contact');
 Route::view('details', 'full_article')->name('detail');
 Route::get('voireplus{id}', 'voireplusController@voireplus')->name('voireplus');
 Route::get('index', 'IndexController@index')->name('index');
-Route::post('comment', 'CommentController@postComment')->name('comment');
+Route::post('comment', 'CommentController@postComment')->name('comment'); 
+
+Route::get('articleListeTag{tag}','IndexController@indexTag')->name('tagArticleListe');
+Route::get('articleListeCategorie{id}','IndexController@indexCategorie')->name('categorieListeArticle');
+
 
 /* fin des routes pour la pages static_ */
 

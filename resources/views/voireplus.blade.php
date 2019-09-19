@@ -61,7 +61,7 @@
 							<span class="post_tags">
 								<span class="tags_label">Tags:</span>
 								@foreach($tags as $ti)
-								<a class="tag_link" href="tags.html">{{$ti->tag}}</a>,
+								<a class="tag_link" href="{{ route('tagArticleListe',[$ti->tag_url,$ti->tag])}}">{{$ti->tag}}</a>,
 								@endforeach
 							</span>
 						</div>
@@ -140,7 +140,7 @@
 									<textarea id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea>
 								</p>
 								<p class="form-submit">
-									<input name="submit" id="submit" value="Submit" type="submit">
+									<input name="submit" id="submit" value="Envoyer" type="submit">
 									<input name="comment_article_ID" value="{{$articles->id}}" id="comment_article_ID" type="hidden">
 								</p>
 							</form>
@@ -166,7 +166,7 @@
 						<h3 class="widget_title">Categories</h3>
 						@foreach($categories as $cat)
 						<ul>
-							<li class="cat-item"><a href="#" title="View all posts filed under Design">{{$cat->nom}}</a></li>
+							<li class="cat-item"><a href="{{route('categorieListeArticle',$cat->id)}}" title="View all posts filed under Design">{{$cat->nom}}</a></li>
 							
 						</ul>
 						@endforeach
@@ -177,24 +177,9 @@
 					<aside class="widget-number-3 widget widget_tag_cloud">
 						<h3 class="widget_title">Tags</h3>
 						<div class="tagcloud">
-							<a href="tags.html" title="1 topic"  style="font-size: 8pt;">Audio</a>
-							<a href="tags.html" title="1 topic"  style="font-size: 8pt;">Business</a>
-							<a href="tags.html" title="1 topic"  style="font-size: 8pt;">Clean</a>
-							<a href="tags.html" title="8 topics" style="font-size: 22pt;">Design</a>
-							<a href="tags.html" title="3 topics" style="font-size: 14pt;">Gallery</a>
-							<a href="tags.html" title="3 topics" style="font-size: 14pt;">Media</a>
-							<a href="tags.html" title="1 topic"  style="font-size: 8pt;">Photo</a>
-							<a href="tags.html" title="3 topics" style="font-size: 14pt;">Print</a>
-							<a href="tags.html" title="1 topic"  style="font-size: 8pt;">Quote</a>
-							<a href="tags.html" title="2 topics" style="font-size: 12pt;">SEO</a>
-							<a href="tags.html" title="1 topic"  style="font-size: 8pt;">Service</a>
-							<a href="tags.html" title="1 topic"  style="font-size: 8pt;">Sound</a>
-							<a href="tags.html" title="1 topic"  style="font-size: 8pt;">Support</a>
-							<a href="tags.html" title="3 topics" style="font-size: 14pt;">Themeforest</a>
-							<a href="tags.html" title="1 topic"  style="font-size: 8pt;">Video</a>
-							<a href="tags.html" title="3 topics" style="font-size: 14pt;">Webdesign</a>
-							<a href="tags.html" title="8 topics" style="font-size: 22pt;">Wordpress</a>
-							<a href="tags.html" title="3 topics" style="font-size: 14pt;">WP Space</a>
+							@foreach($alltags as $s)
+							<a href="{{ route('tagArticleListe',[$s->tag_url,$s->tag])}}" style="font-size: 8pt;">{{$s->tag}}</a>
+							@endforeach
 						</div>
 					</aside>
 					<!-- /Tags -->

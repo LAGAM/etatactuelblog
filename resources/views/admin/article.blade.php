@@ -26,7 +26,7 @@
 
                 <label for="ligne">Publié</label>
 
-                <input type="checkbox" name="ligne" id="ligne" class="">
+                <input type="number" name="ligne" id="ligne" class="">
             </div>
 
 
@@ -92,7 +92,9 @@
           </div>
         </div>
 
-        <button class="btn btn-primary btn-user" type="submit">Enregistrer</button>
+       <div style="display: flex;justify-content: space-around; margin-top: 45px">
+          <button class="btn btn-primary btn-user" type="submit" >Enregistrer</button>
+       </div>
         
     </form>
 

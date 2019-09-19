@@ -32,10 +32,7 @@ class ArticleController extends Controller
 	}
 
 
-    public function create() {
-        $items = Items::where('active', true)->orderBy('nom')->pluck('nom', 'id'); 
-         return view('prices.create', compact('id', 'items')); 
-    }
+   
 
     public function getFormArticle(){
 
@@ -77,6 +74,7 @@ class ArticleController extends Controller
         return redirect(route('admin.dashboard'));
     }
 }
+
 /*$request->all()
 
 

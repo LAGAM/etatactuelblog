@@ -12,10 +12,22 @@ use App\Commentaire;
 use App\Tag;
 use Carbon\Carbon;
 
+use App\Repository\PostRepository;
 
 class IndexController extends Controller
 {
-    //
+
+    protected $postRepository;
+    protected $nbrPerPage = 4 ;
+    
+
+        public function __construct(PostRepository $postRepository)
+      {
+              
+
+        $this->postRepository = $postRepository;
+      }
+        //
     public function index(){
 
 
@@ -24,6 +36,7 @@ class IndexController extends Controller
     $data['categories'] = Categorie::all();
 
    	$article = Article::orderBy('articles.created_at', 'desc');
+    
     $data['articles'] = $article->simplePaginate(5);
 
     $data['tags'] = Tag::all();
@@ -33,4 +46,40 @@ class IndexController extends Controller
 	  return view('index',compact('artRecent'))->with($data);
 
     }
+
+     public function indexTag($tag)
+          {
+
+          $data['categories'] = Categorie::all();
+          $data['tags'] = Tag::all();
+
+
+           $artRecent = $this->postRepository->affichage();
+            $data['artRecent'] =  $artRecent;
+
+          $articles = $this->postRepository->getWithUserAndTagsForTagPaginate($tag, $this->nbrPerPage);
+          
+
+          return view('index', compact('articles'))->with($data);
+         
+        }
+
+         public function indexCategorie($id)
+          {
+
+          $data['categories'] = Categorie::all();
+          $data['tags'] = Tag::all();
+
+
+           $artRecent = $this->postRepository->affichage();
+            $data['artRecent'] =  $artRecent;
+
+          $articles = $this->postRepository->categorie($id, $this->nbrPerPage);
+         // $art = Article::where('categorie_id', '=',$id)->take(4)->get();
+
+          $data['articles'] = $articles;
+
+          return view('index')->with($data);
+         
+        }
 }

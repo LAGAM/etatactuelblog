@@ -143,7 +143,7 @@
 							<span class="post_author">Posté par: 
 								
 								<a href="author.html" class="post_author">
-									
+									Lagama
 								</a>
 								
 							</span>
@@ -165,7 +165,7 @@
 							<span class="post_tags">
 								<span class="tags_label">Tags:</span>
 								@foreach($article->tags as $ot)
-								<a class="tag_link" href="tags.html">{{$ot->tag}}</a>,
+								<a class="tag_link" href="{{ route('tagArticleListe',[$ot->tag_url,$ot->tag])}}">{{$ot->tag}}</a>,
 								@endforeach
 							</span>
 						</div>
@@ -205,7 +205,7 @@
 						<h3 class="widget_title">Categories</h3>
 						@foreach($categories as $cat)
 						<ul>
-							<li class="cat-item"><a href="categories.html" title="View all posts filed under Design">{{ $cat->nom }}</a></li>
+							<li class="cat-item"><a href="{{route('categorieListeArticle',$cat->id)}}" title="View all posts filed under Design">{{ $cat->nom }}</a></li>
 						</ul>
 						@endforeach
 					</aside>
@@ -216,7 +216,7 @@
 						<h3 class="widget_title">Tags</h3>
 						<div class="tagcloud">
 							@foreach($tags as $it)
-							<a href="#" title="1 topic"  style="font-size: 8pt;">{{$it->tag}}</a>
+							<a href="{{ route('tagArticleListe',[$it->tag_url,$it->tag])}}" title="1 topic"  style="font-size: 8pt;">{{$it->tag}}</a>
 							@endforeach
 						</div>
 					</aside>

@@ -16,7 +16,9 @@ class CreateArticlesTable extends Migration {
 			//$table->string('slug', 50);
 			$table->string('chapeau');
 			$table->string('image')->nullable();
+
 			$table->boolean('enligne');
+			
 			$table->integer('user_id')->unsigned();
 			$table->foreign('user_id')->references('id')->on('users')->onDelete('restrict')->onUpdate('restrict');
 			$table->integer('categorie_id')->unsigned();

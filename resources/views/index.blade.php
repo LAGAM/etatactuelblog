@@ -143,7 +143,7 @@
 							<span class="post_author">Posté par: 
 								
 								<a href="author.html" class="post_author">
-									Lagama
+									
 								</a>
 								
 							</span>

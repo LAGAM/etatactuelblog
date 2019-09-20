@@ -23,15 +23,18 @@ Route::view('espace_membre', 'static_pages.espace_membre')->name('espace_membre'
 Route::view('be', 'static_pages.be')->name('be');
 Route::view('contact', 'static_pages.contact')->name('contact');
 Route::view('details', 'full_article')->name('detail');
+
+/* fin des routes pour la pages static_ */
+
+
 Route::get('voireplus{id}', 'voireplusController@voireplus')->name('voireplus');
 Route::get('index', 'IndexController@index')->name('index');
 Route::post('comment', 'CommentController@postComment')->name('comment'); 
-
 Route::get('articleListeTag{tag}','IndexController@indexTag')->name('tagArticleListe');
 Route::get('articleListeCategorie{id}','IndexController@indexCategorie')->name('categorieListeArticle');
 
 
-/* fin des routes pour la pages static_ */
+
 
 Route::group(['prefix'=>'admin'],function(){
     

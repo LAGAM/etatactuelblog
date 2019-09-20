@@ -229,7 +229,7 @@
 						<div class="post_item first">
 							<div class="pic_wrapper image_wrapper"><img alt="This is a Standard post" src="{{ url('uploads/'.$recent->image) }}" height="44" width="73"></div>
 							<div class="post_wrapper">
-								<h4 class="post_title"><a href="#">{{$recent->titre}}</a></h4>
+								<h4 class="post_title"><a href="{{ route('voireplus',[$recent->id])}}">{{$recent->titre}}</a></h4>
 								<!-- <div class="post_author">By: <a href="author.html">John Snow</a></div> -->
 								<div class="post_info">
 									<span class="post_date">{{$recent->created_at->format('d M, Y')}}</span>

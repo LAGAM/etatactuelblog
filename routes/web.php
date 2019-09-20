@@ -35,7 +35,6 @@ Route::get('articleListeCategorie{id}','IndexController@indexCategorie')->name('
 
 
 
-
 Route::group(['prefix'=>'admin'],function(){
     
     Route::get('/dashboard', 'Admin\DashboardController@dashboard')->name("admin.dashboard")->middleware('auth');

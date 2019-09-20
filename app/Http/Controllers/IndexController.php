@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Database\Eloquent\Model;
 use App\Article;
 use App\User;
 use App\Categorie;
@@ -43,6 +44,7 @@ class IndexController extends Controller
        	
     $artRecent = $article->take(4)->get();
 
+
 	  return view('index',compact('artRecent'))->with($data);
 
     }
@@ -78,6 +80,7 @@ class IndexController extends Controller
          // $art = Article::where('categorie_id', '=',$id)->take(4)->get();
 
           $data['articles'] = $articles;
+
 
           return view('index')->with($data);
          

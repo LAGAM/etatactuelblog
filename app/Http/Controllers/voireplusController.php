@@ -41,4 +41,5 @@ class voireplusController extends Controller
 
     	 return view('voireplus',compact(['recentArt','simArt']))->with($data);
     }
+
 }

@@ -80,7 +80,7 @@
 							<div class="pic_wrapper image_wrapper">
 								<img alt="Awesome Slider Post" src="{{ url('uploads/'.$sim->image) }}" height="160" width="260">
 								<span class="image_overlay"></span>
-								<a href="#" class="image_link"><span class="icon-link"></span></a>
+								<a href="{{route('voireplus',[$sim->id])}}" class="image_link"><span class="icon-link"></span></a>
 								<a href="{{ url('uploads/'.$sim->image) }}" class="image_zoom prettyPhoto"><span class="icon-search"></span></a>
 							</div>
 							<div class="title_area">

@@ -35,7 +35,7 @@
 						</div>
 
 						<div class="title_area">
-							<h1 class="post_title"><a href="#"> {{$articles->titre}}</a></h1>
+							<h1 class="post_title"> {{$articles->titre}}</h1>
 						</div>
 
 						<div class="post_info post_info_2">
@@ -84,7 +84,7 @@
 								<a href="{{ url('uploads/'.$sim->image) }}" class="image_zoom prettyPhoto"><span class="icon-search"></span></a>
 							</div>
 							<div class="title_area">
-								<h4 class="related_posts_title"><a href="#">{{$sim->titre}}</a></h4>
+								<h4 class="related_posts_title"><a href="{{route('voireplus',[$sim->id])}}">{{$sim->titre}}</a></h4>
 							</div>
 							<div class="post_info">
 								<span class="post_date">{{date('M d , Y'), strtotime($sim->updated_at)}}</span>
@@ -191,7 +191,7 @@
 						<div class="post_item first">
 							<div class="pic_wrapper image_wrapper"><img alt="This is a Standard post" src="{{ url('uploads/'.$recent->image) }}" height="44" width="73"></div>
 							<div class="post_wrapper">
-								<h4 class="post_title"><a href="post-standard-b1.html">{{$recent->titre}}</a></h4>
+								<h4 class="post_title"><a href="{{route('voireplus', [$recent->id])}}">{{$recent->titre}}</a></h4>
 								<!-- <div class="post_author">De: <a href="author.html"></a></div> -->
 								<div class="post_info">
 									<span class="post_date">{{date('M d , Y'), strtotime($recent->created_at)}}</span>

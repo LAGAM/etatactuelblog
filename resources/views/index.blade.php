@@ -136,7 +136,7 @@
 					        <!-- <div class="post_comments"><a href="post-standard-b1.html#comments"><span class="comments_number">3</span><span class="icon-comment"></span></a></div> -->
 			        	</div>
 						<div class="title_area">
-							<h1 class="post_title"><a href="post-standard-b1.html">{{ $article->titre }}</a></h1>
+							<h1 class="post_title"><a href="{{route('voireplus', [$article->id])}}">{{ $article->titre }}</a></h1>
 						</div>
 						<div class="post_info post_info_2">
 							

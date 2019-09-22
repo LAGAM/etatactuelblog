@@ -87,7 +87,7 @@
 								<h4 class="related_posts_title"><a href="{{route('voireplus',[$sim->id])}}">{{$sim->titre}}</a></h4>
 							</div>
 							<div class="post_info">
-								<span class="post_date">{{date('M d , Y'), strtotime($sim->updated_at)}}</span>
+								<span class="post_date">{!! $sim->created_at->format('M d , Y') !!}</span>
 							</div>
 						</div>
 						@endforeach
@@ -194,7 +194,7 @@
 								<h4 class="post_title"><a href="{{route('voireplus', [$recent->id])}}">{{$recent->titre}}</a></h4>
 								<!-- <div class="post_author">De: <a href="author.html"></a></div> -->
 								<div class="post_info">
-									<span class="post_date">{{date('M d , Y'), strtotime($recent->created_at)}}</span>
+									<span class="post_date">{!! $recent->created_at->format('M d , Y') !!}</span>
 									<span class="post_info_delimiter"></span>
 									
 								</div>

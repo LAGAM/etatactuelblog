@@ -36,7 +36,7 @@ class IndexController extends Controller
 
     $data['categories'] = Categorie::all();
 
-   	$article = Article::orderBy('articles.created_at', 'desc');
+   	$article = Article::orderBy('articles.created_at', 'desc')->where('enligne','=', 'on');
     
     $data['articles'] = $article->simplePaginate(5);
 

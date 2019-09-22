@@ -67,10 +67,12 @@
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Modification</h6>
             <a class="collapse-item" href="{{route('admin.article')}}">Créer un article</a>
-            <a class="collapse-item" href="deleteArticle.html">Supprimer un article</a>
+            <a class="collapse-item" href="#">Brouillon</a>
+            <a class="collapse-item" href="#">Supprimer un article</a>
           </div>
         </div>
       </li>
+
 
       <li class="nav-item">
         <a class="nav-link" href="{{route('admin.categorie')}}">

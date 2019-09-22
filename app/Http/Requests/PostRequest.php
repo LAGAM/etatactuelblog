@@ -27,7 +27,7 @@ class PostRequest extends FormRequest
             'titre' => ['required', 'string', 'max:255'],
             'contenu' => ['required', 'string'],
             'chapeau' => ['required', 'string'],
-            'ligne' => ['required', 'integer'],
+            'ligne' => ['string'],
             'categorie'=> ['required', 'integer'],
             'image'=> ['image'],
             'tags' => ['Regex:/^[A-Za-z0-9-éèàù]{1,50}?(,[A-Za-z0-9-éèàù]{1,50})*$/']

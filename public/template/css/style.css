@@ -3026,16 +3026,17 @@ a img {
 	box-sizing: border-box;
  	font-size:14px;
 	color:#888888;
-	background-color:#414141;
-	border:1px solid #4b4b4b;
+	background-color:#ddd;
+	border:1px solid #12A650 ;
 	margin-bottom:10px;
+	height: 35px;
 }
 #footer_sidebar_inner .sc_contact_form .button {
 	text-align: right;
 }
 #footer_sidebar_inner .sc_contact_form .button a {
 	display:inline-block;
-	width:72px;
+	width:100px;
 	height:32px;
 	line-height:32px;
 	font-size:12px;
@@ -3046,8 +3047,8 @@ a img {
 	text-align:center;
 }
 #footer_sidebar_inner .sc_contact_form .button a:hover {
-	color:#ababab;
-	background-color:#191919;
+	color:#fff;
+	background-color:#12A650;
 }
 
 

@@ -10,6 +10,8 @@
 		<meta name="description" content="themerex responsive template html5 and css3" />
 		<meta name="keywords" content="html5, css3, themerex, template, responsive, adaptive" />
 
+		<title>Blog de la Bibliothèque Virtuelle - @yield('title')</title>
+
 		<link rel="stylesheet" href="template/css/style.css" type="text/css" media="screen" />
 		<link rel="stylesheet" href="template/css/fonts.css" type="text/css" media="screen" />
 		<link rel="stylesheet" href="template/css/shortcodes.css" type="text/css" media="all" />
@@ -33,7 +35,6 @@
 		<!--[if lt IE 9]>
 			<script src="js/html5.js" type="text/javascript"></script>
 		<![endif]-->
-        @yield('head')
 </head>
 
 <body>
@@ -79,7 +80,7 @@
 			</div>
             <div id="header_middle_fixed"></div>
 		</header>
-
+		
         
 		@yield('contenu')
 <!-- FOOTER SECTION -->
@@ -101,16 +102,27 @@
 					</aside>
 					
 					
-					<aside class="widget-number-4 widget newsletter">
+					<!-- <aside class="widget-number-4 widget newsletter">
 						<h3 class="widget_title">La Newsletter</h3>	
 						<form action="#" method="post">
 							<div class="form-group">
 								<label for="email">Email :</label>
 								<input type="email" required class="form-control" style="border-radius: 8px;margin-left: 5px; width: 350px; height: 2.2em; background:#ddd; border: 1px solid #bcbbbb;">
 							</div><br/>
-							<input type="submit" value="S'abonner" style="border-radius: 8px; height: 2.2em; background: #2a66fa; color:#ddd;">
+							<div class="readmore"><a href="post-standard-b1.html" class="more-link">Read more</a></div>
 						</form>
+					</aside> -->
+					<aside class="widget-number-2 widget-number-4 newsletter widget widget_contact_form">
+						<h3 class="widget_title">La newletter</h3>
+						<div class="sc_contact_form">
+							<form method="post" action="php/sendform.php">
+								<div class="field"><input id="sc_contact_form_email" name="email" placeholder="Votre email*" type="text"></div>
+								<div class="button"><a href="#"><span>S'abonner</span></a></div>
+								<div class="result sc_infobox"></div>
+							</form>
+						</div>
 					</aside>
+
 					<aside class="widget-number-4 widget widget_flickr">
 						<h3 class="widget_title">Contacts</h3>
 						<p style="color:#000;s">Addresse: Abidjan Cocody II plateaux,<br/>

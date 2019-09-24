@@ -1,7 +1,5 @@
-
-
-
 @extends('layouts.base')
+@section('title','Création d\'un article')
 
 @section('content')
 

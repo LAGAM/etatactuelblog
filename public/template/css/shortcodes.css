@@ -478,11 +478,11 @@ div.sc_columns_count_2 > div.sc_column_item {
 	margin-left:4%;
 }
 div.sc_columns_count_3 > div.sc_column_item {
-	width: 31%;	
+	width: 80%;	
 	margin-left:3.3%;
 }
 div.sc_columns_count_3 > div.sc_column_item.span_2 {
-	width: 65.3%;
+	width: 90%;
 }
 div.sc_columns_count_4 > div.sc_column_item {
 	width: 22.8%;	

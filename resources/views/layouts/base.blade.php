@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Admin - Create article</title>
+  <title>Administration du Blog de la Bibliothèque virtuelle - @yield('title')</title>
 
   <script src="https://cdn.ckeditor.com/ckeditor5/12.4.0/classic/ckeditor.js"></script> <!-- ckeditor cdn -->
 
@@ -19,7 +19,6 @@
 
   <!-- Custom styles for this template-->
   <link href="{{asset('admin/css1/sb-admin-2.min.css')}}" rel="stylesheet">
-  @yield('title')
 
 </head>
 
@@ -93,7 +92,7 @@
 
       <!-- Nav Item - Charts -->
       <li class="nav-item">
-        <a class="nav-link" href="charts.html">
+        <a class="nav-link" href="{{route('admin.setting')}}">
           <i class="fas fa-fw fa-cog"></i>
           <span>Paramètres</span></a>
       </li>

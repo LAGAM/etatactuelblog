@@ -1,7 +1,9 @@
 @extends('template')
-@section('head')
-<title>Accueil | Blog</title>
-@endsection
+
+
+@section('title', 'Accueil')
+
+
 @section('contenu')
 
 <div id="main" class="without_sidebarr with_sidebar right_sidebar">
@@ -111,10 +113,10 @@
     <div id="breadcrumbs_area">
         <div id="breadcrumbs_inner">
             <h4 class="title">Tout les articles</h4>
-            <ul class="breadcrumbs">
+            <!-- <ul class="breadcrumbs">
                 <li class="home"><a href="index.html">Accueil</a></li>
                 <li class="current">Tout les articles</li>
-            </ul>
+            </ul> -->
         </div>
     </div>
     <!-- /Page title and breadcrumbs -->

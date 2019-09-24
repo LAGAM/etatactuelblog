@@ -1,7 +1,5 @@
 @extends('layouts.base')
-@section('title')
-  <title> Admin - Tout les articles</title>
-
+@section('title','Tout les articles')
 @section('content')
 <div class="card shadow mb-4">
 	<div class="card-header py-3">

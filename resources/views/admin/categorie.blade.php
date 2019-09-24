@@ -1,5 +1,6 @@
 @extends('layouts.base')
-    @section('content')
+@section('title', 'Catégorie')
+@section('content')
 
     <h1 class="h3 mb-4 text-gray-800">Catégories</h1>
 

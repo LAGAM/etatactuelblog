@@ -1,6 +1,5 @@
 @extends('layouts.base')
-@section('title')
-  <title> Admin - Commentaires</title>
+@section('title','Commentaires')
 
 @section('content')
 

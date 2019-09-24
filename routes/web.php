@@ -41,6 +41,8 @@ Route::group(['prefix'=>'admin'],function(){
     Route::get('/categorie', 'Admin\CategorieController@getFormCategorie')->name('admin.categorie')->middleware('auth');
     Route::get('/comment', 'Admin\CommentController@showComment')->name('admin.comment')->middleware('auth');
     Route::get('/allArticle', 'Admin\AllArticleController@showAllArticle')->name('admin.allArticle')->middleware('auth');
+    Route::get('/setting', 'Admin\SettingController@showSetting')->name('admin.setting')->middleware('auth');
+    Route::post('/setting', 'Admin\SettingController@updateSetting')->name('admin.setting')->middleware('auth');
     Route::post('/categorie', 'Admin\CategorieController@postFormCategorie')->name('admin.categorie')->middleware('auth');
     Route::get('/article', 'Admin\ArticleController@getFormArticle')->name('admin.article')->middleware('auth');
     Route::post('/article', 'Admin\ArticleController@postFormArticle')->name('admin.article')->middleware('auth');

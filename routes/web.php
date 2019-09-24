@@ -46,6 +46,7 @@ Route::group(['prefix'=>'admin'],function(){
     Route::post('/categorie', 'Admin\CategorieController@postFormCategorie')->name('admin.categorie')->middleware('auth');
     Route::get('/article', 'Admin\ArticleController@getFormArticle')->name('admin.article')->middleware('auth');
     Route::post('/article', 'Admin\ArticleController@postFormArticle')->name('admin.article')->middleware('auth');
+    Route::get('/editArticle{id}', 'Admin\editArticleController@editArticleForm')->name('admin.editArticle')->middleware('auth');
     Route::get('/welcome' , function () { return view('welcome');})->name('welcome');
     
 

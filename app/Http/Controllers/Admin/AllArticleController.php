@@ -10,7 +10,10 @@ class AllArticleController extends Controller
 {
     //
     public function showAllArticle(){
-    	$data['articles'] = Article::all();
+    	$article = Article::orderBy('articles.created_at', 'desc')->where('enligne','=', 'on');
+    	$data['articles'] = $article->simplePaginate(4);
+
+    	/*$artPaginate = $article->simplePaginate(5);*/
 
     	return view('admin.allArticle')->with($data);
     }

@@ -20,7 +20,7 @@
                 <div class="col-md-8">
                   <div class="form-group">
                     <label class="bmd-label-floating">Email :</label>
-                    <input type="email" name="email" class="form-control">
+                    <input type="email" name="email" class="form-control" value="{{Auth::user()->email}}">
                   </div>
                 </div>
               </div>
@@ -28,13 +28,13 @@
                 <div class="col-md-6">
                   <div class="form-group">
                     <label class="bmd-label-floating">Nom</label>
-                    <input type="text" name="nom" class="form-control">
+                    <input type="text" name="nom" class="form-control" value="{{Auth::user()->nom}}">
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
                     <label class="bmd-label-floating">Prenom</label>
-                    <input type="text" name="prenom" class="form-control">
+                    <input type="text" name="prenom" class="form-control" value="{{Auth::user()->prenom}}">
                   </div>
                 </div>
               </div>

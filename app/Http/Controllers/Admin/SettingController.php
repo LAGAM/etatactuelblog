@@ -4,6 +4,7 @@ namespace App\Http\Controllers\admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Hash;
 use App\User;
 
 class SettingController extends Controller
@@ -14,10 +15,16 @@ class SettingController extends Controller
     }
 
     public function updateSetting(Request $request){
-    	if(isset($_POST['update'])){
-    		$nomUpdate = $request->input('nom');
-    		$nomExist = User::where('nom','=',$nomUpdate);
-    		echo "string";;
-    	}
+    	
+        $attribut = array_merge([
+            'nom' => $request->input('nom'),
+            'email' => $request->input('email'),
+            'prenom' => $request->input('prenom'),
+            'oldmdp' => Hash::make($request->input('oldmdp')),
+            'mdp' => Hash::make($request->input('mdp')),
+            'mdp1' => Hash::make($request->input('mdp1')),
+        ]);
+        
     }
 }
+

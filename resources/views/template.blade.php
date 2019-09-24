@@ -59,7 +59,7 @@
 								<li class="menu-item"><a href="#">Activités</a>
 									<ul style="display: none;" class="sub-menu">
 										<li class="menu-item"><a href="{{route('numerisation')}}">numerisation de these</a></li>
-										<li class="menu-item"><a href="{{route('formation')}}">formation bibliothequaire, enseignent chercheur</a></li>
+										<li class="menu-item"><a href="{{route('formation')}}">formation</a></li>
 										<li class="menu-item"><a href="{{route('oaw')}}">semaine open access week</a></li>
 									</ul>
 								</li>
@@ -116,7 +116,7 @@
 						<p style="color:#000;s">Addresse: Abidjan Cocody II plateaux,<br/>
 						 Boite Postale: 28 BP 536 ABIDJAN 28<br/>
 						 Téléphone: (+225) 22515147 / 42222200<br/>
-						 Email: contact@example.com</p>	
+						 Email: courrier@uvci.edu.ci</p>	
 					</aside>
 				</div>
 			</div>

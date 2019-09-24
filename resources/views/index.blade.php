@@ -140,10 +140,10 @@
 						</div>
 						<div class="post_info post_info_2">
 							
-							<span class="post_author">Posté par: 
+							<span class="post_author">Posté par:
 								
-								<a href="author.html" class="post_author">
-									
+								<a href="#" class="post_author">
+									<!-- {!! $article->user_id !!} -->
 								</a>
 								
 							</span>

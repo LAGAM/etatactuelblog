@@ -36,7 +36,7 @@
         <div class="sidebar-brand-icon rotate-n-15">
           <i class="fas fa-laugh-wink"></i>
         </div>
-        <div class="sidebar-brand-text mx-3">Larab_UVCI</div>
+        <div class="sidebar-brand-text mx-3">SDVT_UVCI</div>
       </a>
 
       <!-- Divider -->
@@ -67,8 +67,8 @@
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Modification</h6>
             <a class="collapse-item" href="{{route('admin.article')}}">Créer un article</a>
-            <a class="collapse-item" href="#">Brouillon</a>
-            <a class="collapse-item" href="#">Supprimer un article</a>
+            <!-- <a class="collapse-item" href="#">Brouillon</a> -->
+            <a class="collapse-item" href="{{route('admin.allArticle')}}">Tout les articles</a>
           </div>
         </div>
       </li>
@@ -82,7 +82,7 @@
 
       <!-- Nav Item - Utilities Collapse Menu -->
       <li class="nav-item">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="{{route('admin.comment')}}">
           <i class="fas fa-fw fa-comment-alt"></i>
           <span>Commentaires</span>
         </a>
@@ -166,6 +166,33 @@
         <!-- Begin Page Content -->
         <div class="container-fluid">
             @yield('content')
+        </div>
+        <!-- Logout Modal-->
+        <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Voulez-vous quitter?</h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">×</span>
+                </button>
+              </div>
+              <div class="modal-body">Cliquez "Déconnecter" Pour arrêter votre session.</div>
+              <div class="modal-footer">
+                <button class="btn btn-secondary" type="button" data-dismiss="modal">Annuler</button>
+                <a class="btn btn-secondary"  href="{{ route('logout') }}"
+                     onclick="event.preventDefault();
+                                   document.getElementById('logout-form').submit();">
+                      {{ __('Deconnexion') }}
+               </a>
+               <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                      @csrf
+               </form>
+
+               
+              </div>
+            </div>
+          </div>
         </div>
 
           <script src="{{asset('admin/vendor1/jquery/jquery.min.js')}}"></script>

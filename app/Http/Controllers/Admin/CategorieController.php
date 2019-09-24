@@ -11,7 +11,9 @@ use App\Categorie;
 class CategorieController extends Controller
 {
     public function getFormCategorie() {
-        return view ('admin.categorie');
+
+        $data['categories'] = Categorie::all();
+        return view ('admin.categorie')->with($data);
     }
      public function postFormCategorie(Request $request) {
 
@@ -32,10 +34,10 @@ class CategorieController extends Controller
 
             if ($categorie) {
                // flash('Opération réalisée avec succès !')->success();
-                return redirect()->route('admin.dashboard');
+                return redirect()->route('admin.categorie');
             } else {
                //  flash('Opération non effectuée !')->error();
-                return redirect()->route('admin.categorie');
+                return redirect()->back()('admin.categorie');
             }
             
         }

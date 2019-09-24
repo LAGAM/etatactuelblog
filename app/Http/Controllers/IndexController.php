@@ -12,6 +12,8 @@ use App\Categorie;
 use App\Commentaire;
 use App\Tag;
 use Carbon\Carbon;
+use Illuminate\Support\Collection;
+use Illuminate\Support\Arr;
 
 use App\Repository\PostRepository;
 
@@ -40,10 +42,10 @@ class IndexController extends Controller
     
     $data['articles'] = $article->simplePaginate(5);
 
+    $data['users'] = User::all();
     $data['tags'] = Tag::all();
        	
     $artRecent = $article->take(4)->get();
-
 
 	  return view('index',compact('artRecent'))->with($data);
 

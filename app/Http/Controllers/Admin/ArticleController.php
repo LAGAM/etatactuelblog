@@ -73,69 +73,27 @@ class ArticleController extends Controller
     
         return redirect(route('admin.dashboard'));
     }
+
+
+    public function showAllArticle(){
+      $article = Article::orderBy('articles.created_at', 'desc')->where('enligne','=', 'on');
+      $data['articles'] = $article->simplePaginate(4);
+
+      /*$artPaginate = $article->simplePaginate(5);*/
+
+      return view('admin.allArticle')->with($data);
+    }
+
+    public function editArticleForm($id){
+
+      $data['categories'] = Categorie::all();
+
+      $editArt = Article::where('id','=', $id)->first();
+      //dd($editArt);
+
+      return view('admin.editArticle', compact('editArt'))->with($data);
+    }
 }
 
-/*$request->all()
-
-
-
-
-        
-       /* 
-       
-       $validator = Validator::make($request->all(), [
-            'titre' => ['required', 'string', 'max:255'],
-            'contenu' => ['required', 'string', 'max:255'],
-            'chapeau' => ['required', 'string', 'max:255'],
-            'ligne' => ['required', 'integer'],
-            'categorie'=> ['required', 'integer'],
-            'image'=> ['image'],
-        ]);
-          
-       $article = new Article;
-       $article->titre = $request->input('titre');
-       $article->contenu = $request->input('contenu');
-       $article->categorie_id = $request->input('categorie');
-       $article->chapeau =  $request->input('chapeau');
-       $article->user_id = 1;
-       $article->enligne =$request->input('ligne');
-       $article->save();
-        /*
-        if ($validator->fails()) 
-        {
-            return redirect()->back()->withError($validator)->withInput();
-        } else
-            $imagePath = request('image')->postFormArticle('uploads', 'public');
-
-        
-          
-              /*  $attributs = [
-                    'titre' => $request->titre,
-                    'contenu' => $request->contenu,
-                    'chapeau' => $request->chapeau,
-                    'enligne' => $request->ligne,
-                    'user_id' =>1,
-                    'image' =>$imagePath,
-                   'categorie_id' =>$request->Categorie,
-                    
-                ];
-                
-         {
-
-
-           $categorie = Article::create($attributs); 
-       
-
-
-            if ($categorie)
-             {
-               // flash('Opération réalisée avec succès !')->success();
-                return redirect()->route('admin.dashboard');
-            } else
-             {
-               //  flash('Opération non effectuée !')->error();
-                return redirect()->route('admin.article');
-            }
-    }*/
 
 

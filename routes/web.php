@@ -36,17 +36,28 @@ Route::get('articleListeCategorie{id}','IndexController@indexCategorie')->name('
 
 
 Route::group(['prefix'=>'admin'],function(){
-    
-    Route::get('/dashboard', 'Admin\DashboardController@dashboard')->name("admin.dashboard")->middleware('auth');
-    Route::get('/categorie', 'Admin\CategorieController@getFormCategorie')->name('admin.categorie')->middleware('auth');
-    Route::get('/comment', 'Admin\CommentController@showComment')->name('admin.comment')->middleware('auth');
-    Route::get('/allArticle', 'Admin\AllArticleController@showAllArticle')->name('admin.allArticle')->middleware('auth');
+
+    Route::get('/dashboard', 'Admin\DashboardController@dashboard')->name("admin.dashboard")->middleware('auth');//dashbord
+
+    //parametre
+
     Route::get('/setting', 'Admin\SettingController@showSetting')->name('admin.setting')->middleware('auth');
     Route::post('/setting', 'Admin\SettingController@updateSetting')->name('admin.setting')->middleware('auth');
-    Route::post('/categorie', 'Admin\CategorieController@postFormCategorie')->name('admin.categorie')->middleware('auth');
+
+    // les articles
     Route::get('/article', 'Admin\ArticleController@getFormArticle')->name('admin.article')->middleware('auth');
     Route::post('/article', 'Admin\ArticleController@postFormArticle')->name('admin.article')->middleware('auth');
-    Route::get('/editArticle{id}', 'Admin\editArticleController@editArticleForm')->name('admin.editArticle')->middleware('auth');
+    Route::get('/article/{id}/editArticle', 'Admin\ArticleController@editArticleForm')->name('admin.editArticle')->middleware('auth');
+    Route::get('/article/allArticle', 'Admin\ArticleController@showAllArticle')->name('admin.allArticle')->middleware('auth');
+
+    //categories
+    Route::get('/categorie', 'Admin\CategorieController@getFormCategorie')->name('admin.categorie')->middleware('auth');
+    Route::post('/categorie', 'Admin\CategorieController@postFormCategorie')->name('admin.categorie')->middleware('auth');
+
+    //commentaires
+    Route::get('/comment', 'Admin\CommentController@showComment')->name('admin.comment')->middleware('auth');
+    
+    
     Route::get('/welcome' , function () { return view('welcome');})->name('welcome');
     
 

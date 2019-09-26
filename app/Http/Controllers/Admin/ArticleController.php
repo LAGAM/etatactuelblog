@@ -89,8 +89,9 @@ class ArticleController extends Controller
       $data['categories'] = Categorie::all();
 
       $editArt = Article::where('id','=', $id)->first();
+      $editCategorie = Categorie::where('id','=', $editArt->categorie_id)->first();
 
-      return view('admin.editArticle', compact('editArt'))->with($data);
+      return view('admin.editArticle', compact('editArt','editCategorie'))->with($data);
     }
 
     public function update($id, Request $request, PostRepository $postRepository){

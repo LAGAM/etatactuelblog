@@ -33,9 +33,8 @@
               <label for="categorie">Catégorie</label>
 
                 <select name="categorie" class="form-control">
-                  <option value="">{{$editCategorie->nom}}</option>
                   @foreach($categories as $cat)
-                    <option value="{{$cat->id}}">{{$cat->nom}}</option>
+                    <option value="{{$cat->id}}" checked="{{$editCategorie->nom}}">{{$cat->nom}}</option>
                   @endforeach
                 </select>
 

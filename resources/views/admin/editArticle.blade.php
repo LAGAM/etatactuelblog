@@ -24,7 +24,7 @@
 
                 <label for="ligne">Publié</label>
 
-                <input type="checkbox" name="ligne" id="ligne" class="">
+                <input type="checkbox" name="ligne" id="ligne" checked>
             </div>
 
 
@@ -36,7 +36,7 @@
                   <option value="">Selectionnez une valeur</option>
                   @foreach($categories as $cat)
                     <option value="{{$cat->id}}">{{$cat->nom}}</option>
-                   @endforeach
+                  @endforeach
                 </select>
 
             </div>

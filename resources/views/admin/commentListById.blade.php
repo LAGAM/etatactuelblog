@@ -41,7 +41,7 @@
                       </td> 
                       @endforeach
                       @if($commentaires->count() === 0)
-                      <td class="text-danger text-center">Désolé, Aucun commentaire à afficher pour cet article</td>  
+                       <td class="text-danger text-center"> <i class="fas fa-exclamation-circle"></i> Désolé, Aucun commentaire à afficher pour cet article</td>  
                       @endif                 
                     </tr>
                     

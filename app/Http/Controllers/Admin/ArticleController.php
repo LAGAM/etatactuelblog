@@ -89,15 +89,33 @@ class ArticleController extends Controller
       $data['categories'] = Categorie::all();
 
       $editArt = Article::where('id','=', $id)->first();
-      //dd($editArt);
+
 
       return view('admin.editArticle', compact('editArt'))->with($data);
     }
 
     public function update($id, Request $request, PostRepository $postRepository){
-      $artUpdate = Article::where('id','=', $id)->first();
-      $updating = $artUpdate->update($request->input());
-      return redirect()->back();
+
+      if ($request->hasfile('image')){
+            $file = $request->file('image');
+            $extension = $file->getClientOriginalExtension();
+            $filename = time().'.'.$extension;
+            $file ->move('uploads', $filename );
+        }else{
+            $filename = '';
+        }
+
+      $artUpdate = Article::where('id','=', $id)->update([
+        'titre' => $request->input('titre'),
+        'chapeau' => $request->input('chapeau'),
+        'contenu' => $request->input('contenu'),
+        'enligne' => $request->input('ligne'),
+        'categorie_id' => $request->input('categorie'),
+        'image' => $filename,
+        'user_id' => $request->user()->id
+      ]);
+      
+      return redirect(route('admin.allArticle'));
     }
 
     public function delete($id){

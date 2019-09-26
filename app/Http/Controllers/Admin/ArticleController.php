@@ -90,7 +90,6 @@ class ArticleController extends Controller
 
       $editArt = Article::where('id','=', $id)->first();
 
-
       return view('admin.editArticle', compact('editArt'))->with($data);
     }
 

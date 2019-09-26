@@ -18,10 +18,10 @@ class CreateArticleTagTable extends Migration
             $table->timestamps();
             $table->integer('article_id')->unsigned();
 
-            $table->foreign('article_id')->references('id')->on('articles')->onDelete('restrict')->onUpdate('restrict');
+            $table->foreign('article_id')->references('id')->on('articles')->onDelete('cascade')->onUpdate('cascade');
             $table->integer('tag_id')->unsigned();
             
-            $table->foreign('tag_id')->references('id')->on('tags')->onDelete('restrict')->onUpdate('restrict');
+            $table->foreign('tag_id')->references('id')->on('tags')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

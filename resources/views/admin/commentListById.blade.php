@@ -1,57 +1,48 @@
 @extends('layouts.base')
-@section('title','Tous les Articles')
+@section('title','Les commentaires')
 
 @section('content')
 
-	<h1 class="h3 mb-2 text-gray-800">Les Articles</h1>
+	<h1 class="h3 mb-2 text-gray-800">Les Commentaires</h1>
           
 
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
             <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary">Tableau des articles</h6>
+              <h6 class="m-0 font-weight-bold text-primary">Tableau des commentaires</h6>
             </div>
             <div class="card-body">
               <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>
                     <tr>
-                      <th>Id</th>
-                      <th>Titre</th>
-                      <th>Chapeau</th>
+                      <th>Auteur</th>
+                      <th>Contenu</th>
                       <th>Options</th>
                     </tr>
                   </thead>
                   <tfoot>
                     <tr>
-                      <th>Id</th>
-                      <th>Titre</th>
-                      <th>Chapeau</th>
+                      <th>Auteur</th>
+                      <th>Contenu</th>
                       <th>Options</th>                     
                     </tr>
                   </tfoot>
                   <tbody>
-                    @foreach($articles as $article)   
+                    @foreach($commentaires as $co)   
                     <tr>
-                      <td>{{$article->id}}</td>
-                      <td>{{$article->titre}}</td>
-                      <td>{{$article->chapeau}}</td>
-                      <td width="20%">
-                      	<a href="{{route('admin.editArticle', [$article->id])}}" class="btn btn-info btn-circle" style="margin-left: 10px;">
-            							<i class="fas fa-pencil-alt"></i>
-            						</a>
-            						<a class="btn btn-danger btn-circle" href="{{route('admin.delete', [$article->id])}}" style="margin-left: 10px;" >
+                      <td>{{$co->nom_auteur_comment}}</td>
+                      <td>{{$co->contenu}}</td>
+                      <td width="10%">
+            						<a class="btn btn-danger btn-circle" href="{{route('admin.commentDelete', [$co->id])}}" style="margin-left: 10px;" >
             							<i class="fas fa-trash"></i>
             						</a>
-                        <a href="{{route('admin.commentListById', [$article->id])}}" class="btn btn-warning btn-circle" style="margin-left: 10px;" >
-                          <i class="fas fa-fw fa-comment-alt"></i>
-                        </a>
                       </td>
                     </tr>
                     @endforeach
                   </tbody>
                 </table>
-                {{ $articles->links() }}
+                {{ $commentaires->links() }}
               </div>
             </div>
           </div>

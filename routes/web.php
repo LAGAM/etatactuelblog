@@ -48,7 +48,9 @@ Route::group(['prefix'=>'admin'],function(){
     Route::get('/article', 'Admin\ArticleController@getFormArticle')->name('admin.article')->middleware('auth');
     Route::post('/article', 'Admin\ArticleController@postFormArticle')->name('admin.article')->middleware('auth');
     Route::get('/article/{id}/editArticle', 'Admin\ArticleController@editArticleForm')->name('admin.editArticle')->middleware('auth');
+    Route::post('/article/{id}/editArticle', 'Admin\ArticleController@update')->name('admin.editArticle')->middleware('auth');
     Route::get('/article/allArticle', 'Admin\ArticleController@showAllArticle')->name('admin.allArticle')->middleware('auth');
+    Route::get('/article/{id}/delete', 'Admin\ArticleController@delete')->name('admin.delete')->middleware('auth');
 
     //categories
     Route::get('/categorie', 'Admin\CategorieController@getFormCategorie')->name('admin.categorie')->middleware('auth');
@@ -56,6 +58,9 @@ Route::group(['prefix'=>'admin'],function(){
 
     //commentaires
     Route::get('/comment', 'Admin\CommentController@showComment')->name('admin.comment')->middleware('auth');
+    Route::get('/comment/{id}/commentListById', 'Admin\CommentController@commentListById')->name('admin.commentListById')->middleware('auth');
+    Route::get('/comment/{id}/commentDelete', 'Admin\CommentController@commentDelete')->name('admin.commentDelete')->middleware('auth');
+
     
     
     Route::get('/welcome' , function () { return view('welcome');})->name('welcome');

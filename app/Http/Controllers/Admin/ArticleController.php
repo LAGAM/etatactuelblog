@@ -93,6 +93,19 @@ class ArticleController extends Controller
 
       return view('admin.editArticle', compact('editArt'))->with($data);
     }
+
+    public function update($id, Request $request, PostRepository $postRepository){
+      $artUpdate = Article::where('id','=', $id)->first();
+      $updating = $artUpdate->update($request->input());
+      return redirect()->back();
+    }
+
+    public function delete($id){
+      Article::destroy($id);
+
+      return redirect()->back();
+    }
+
 }
 
 

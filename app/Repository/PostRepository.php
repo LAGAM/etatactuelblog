@@ -48,6 +48,5 @@ use App\Article;
         {
             $this->article->create($inputs);
         }
-
        
 }

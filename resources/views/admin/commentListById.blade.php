@@ -29,17 +29,22 @@
                     </tr>
                   </tfoot>
                   <tbody>
-                    @foreach($commentaires as $co)   
+                       
                     <tr>
+                      @foreach($commentaires as $co)
                       <td>{{$co->nom_auteur_comment}}</td>
                       <td>{{$co->contenu}}</td>
                       <td width="10%">
             						<a class="btn btn-danger btn-circle" href="{{route('admin.commentDelete', [$co->id])}}" style="margin-left: 10px;" >
             							<i class="fas fa-trash"></i>
             						</a>
-                      </td>
+                      </td> 
+                      @endforeach
+                      @if($commentaires->count() === 0)
+                      <td class="text-danger text-center">Désolé, Aucun commentaire à afficher pour cet article</td>  
+                      @endif                 
                     </tr>
-                    @endforeach
+                    
                   </tbody>
                 </table>
                 {{ $commentaires->links() }}

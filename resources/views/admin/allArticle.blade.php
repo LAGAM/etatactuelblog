@@ -40,9 +40,14 @@
                       	<a href="{{route('admin.editArticle', [$article->id])}}" class="btn btn-info btn-circle" style="margin-left: 10px;">
             							<i class="fas fa-pencil-alt"></i>
             						</a>
-            						<a class="btn btn-danger btn-circle" href="{{route('admin.delete', [$article->id])}}" style="margin-left: 10px;" >
+            						<a class="btn btn-danger btn-circle" onclick="return confirm('Voulez vous vraiment supprimer cet article ?')" href="{{route('admin.delete', [$article->id])}}" style="margin-left: 10px;" >
             							<i class="fas fa-trash"></i>
             						</a>
+                        <script>
+                          $(".delete").on("submit", function(){
+                              return confirm("Are you sure?");
+                          });
+                      </script>
                         <a href="{{route('admin.commentListById', [$article->id])}}" class="btn btn-warning btn-circle" style="margin-left: 10px;" >
                           <i class="fas fa-fw fa-comment-alt"></i>
                         </a>
@@ -55,6 +60,9 @@
               </div>
             </div>
           </div>
+
+
+
 
           <!-- supression d'un articles modal -->
 

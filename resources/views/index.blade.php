@@ -145,7 +145,7 @@
 							<span class="post_author">Posté par:
 								
 								<a href="#" class="post_author">
-									<!-- {!! $article->user_id !!} -->
+									
 								</a>
 								
 							</span>

@@ -2,7 +2,8 @@
 @section('title','Les commentaires')
 
 @section('content')
-
+  
+  <a href=javascript:history.go(-1)  class="btn btn-warning btn-circle"> <i class="fas fa-arrow-circle-left fa-2x info"></i> </a><br/><br/>
 	<h1 class="h3 mb-2 text-gray-800">Les Commentaires</h1>
           
 

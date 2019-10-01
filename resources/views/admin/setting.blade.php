@@ -2,6 +2,7 @@
 @section('title','Paramètres')
 @section('content')
 
+<a href=javascript:history.go(-1)  class="btn btn-warning btn-circle"> <i class="fas fa-arrow-circle-left fa-2x info"></i> </a><br/><br/>
 <div class="content">
   <div class="container-fluid">
     <div class="row">

@@ -3,6 +3,7 @@
 
 @section('content')
 
+    <a href=javascript:history.go(-1)  class="btn btn-warning btn-circle"> <i class="fas fa-arrow-circle-left fa-2x info"></i> </a><br/><br/>
     <form method='POST' action="{{route('admin.article')}}"  enctype="multipart/form-data">
             
         @csrf
@@ -45,15 +46,11 @@
               <label for="image" style="display: block; margin: .4rem 0;">Choisir une image:</label>
               <input type="file" class="form-control" id="image" style="margin: .4rem 0;" name="image" accept="image/jpeg, image/png">
             </div>
-            <div class="form-group col-md-6">  
+            <div class="form-group col-md-12">  
 
               <label for="tags">Tags</label>
-              <input type="text" name="tags" class="form-control form-control-user  @error('tags') is-valid @enderror" id="tags" aria-describedby="nomHelp" placeholder="Ajouter des tags" value="{{ old('tags') }}" required autocomplete="tags" autofocus>
-              @error('tags')
-                <span class="invalid-feedback" role="alert">
-                    <strong>{{ $message }}</strong>
-                </span>
-              @enderror
+              <input type="text" value="Amsterdam,Washington,Sydney,Beijing,Cairo" data-role="tagsinput" />
+              
             </div>
                 
             <div class="form-group">

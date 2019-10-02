@@ -16,14 +16,21 @@ class SettingController extends Controller
 
     public function updateSetting(Request $request){
     	
-        $attribut = array_merge([
-            'nom' => $request->input('nom'),
-            'email' => $request->input('email'),
-            'prenom' => $request->input('prenom'),
-            'oldmdp' => Hash::make($request->input('oldmdp')),
-            'mdp' => Hash::make($request->input('mdp')),
-            'mdp1' => Hash::make($request->input('mdp1')),
-        ]);
+        
+        
+        $user = auth()->user()->password;
+        $inputPassword = request('oldmdp');
+        if(password_verify($inputPassword, $user)){
+            $mdp = request('newmdp');
+            $mdp1 = request('newmdp1');
+            if($mdp === $mdp1){
+                dd($mdp);
+            }else{
+                return redirect()->back();
+            }
+        }else{
+            return redirect()->back();
+        }
         
     }
 }

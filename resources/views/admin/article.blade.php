@@ -46,10 +46,15 @@
               <label for="image" style="display: block; margin: .4rem 0;">Choisir une image:</label>
               <input type="file" class="form-control" id="image" style="margin: .4rem 0;" name="image" accept="image/jpeg, image/png">
             </div>
-            <div class="form-group col-md-12">  
+            <div class="form-group col-md-6">  
 
               <label for="tags">Tags</label>
-              <input type="text" value="Amsterdam,Washington,Sydney,Beijing,Cairo" data-role="tagsinput" />
+              <input type="text" name="tags" class="form-control form-control-user  @error('tags') is-valid @enderror" id="tags" aria-describedby="nomHelp" placeholder="Ajouter des tags" value="{{ old('tags') }}" required autocomplete="tags" autofocus />
+              @error('tags')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+              @enderror
               
             </div>
                 

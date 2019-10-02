@@ -63,7 +63,6 @@
                     <input type="password"name="newmdp1" class="form-control">
                   </div>
                 </div>
-
               </div>
               <button type="submit" class="btn btn-primary pull-right" name="update">Mettre à jour</button>
               <div class="clearfix"></div>

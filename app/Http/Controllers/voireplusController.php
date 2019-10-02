@@ -32,14 +32,15 @@ class voireplusController extends Controller
 
         $user = User::where('id', '=', $article->user_id)->first();
         $data['users'] = $user;
-      
+
+        $categorie = Categorie::where('id','=', $article->categorie_id)->first();
 
         $tag = $article->tags;
 
          $data['alltags'] = Tag::all();
         $data['tags'] = $tag;    	
 
-    	 return view('voireplus',compact(['recentArt','simArt']))->with($data);
+    	 return view('voireplus',compact(['recentArt','simArt','categorie']))->with($data);
     }
 
 }

@@ -24,7 +24,15 @@ class SettingController extends Controller
             $mdp = request('newmdp');
             $mdp1 = request('newmdp1');
             if($mdp === $mdp1){
-                dd($mdp);
+                $userUpdate = User::where('nom','=',auth()->user()->nom)->update([
+                    'nom' => $request->input('nom'),
+                    'prenom' => $request->input('prenom'),
+                    'email' => $request->input('email'),
+                    'password' => Hash::make($mdp1),
+                ]);
+                if(isset($userUpdate)){
+                    return redirect(route('admin.dashboard'));
+                }
             }else{
                 return redirect()->back();
             }

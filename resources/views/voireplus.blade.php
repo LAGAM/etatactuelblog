@@ -45,7 +45,10 @@
 							<span class="post_info_delimiter"></span>
 							<span class="post_categories">
 								<span class="cats_label">Categories:</span>
-                                    <a class="cat_link" href="#">{{$categorie->nom}}</a>							
+									@foreach($categories as $cat)
+                                    <a class="cat_link" href="{{route('categorieListeArticle',$cat->id)}}">
+                                	@endforeach
+                                	{{$categorie->nom}}</a>							
 							</span>
 						</div>
 

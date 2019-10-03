@@ -77,7 +77,7 @@ class ArticleController extends Controller
 
     public function showAllArticle(){
       $article = Article::orderBy('articles.created_at', 'desc')->where('enligne','=', 'on');
-      $data['articles'] = $article->simplePaginate(4);
+      $data['articles'] = $article->Paginate(4);
 
       /*$artPaginate = $article->simplePaginate(5);*/
 

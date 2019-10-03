@@ -1329,6 +1329,9 @@ a img {
 	background: #191919;
 	border-color: #191919;
 }
+.nav_pages li.active{
+	background-color: royalblue;
+}
 .nav_pages_parts {
 	margin: 10px  0;
 }

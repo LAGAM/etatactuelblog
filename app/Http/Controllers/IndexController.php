@@ -40,7 +40,7 @@ class IndexController extends Controller
 
    	$article = Article::orderBy('articles.created_at', 'desc')->where('enligne','=', 'on');
     
-    $data['articles'] = $article->simplePaginate(5);
+    $data['articles'] = $article->Paginate(5);
 
     $data['users'] = User::all();
     $data['tags'] = Tag::all();

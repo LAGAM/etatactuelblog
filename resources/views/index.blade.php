@@ -177,22 +177,28 @@
 					
 
 					<!-- Pages navigation -->
+					<div id="nav_pages" class="nav_pages">
+							<li>{{$articles->links()}}</li>
+							@if($articles->currentPage())
+								<li class="pager_current"><span title="">{{$articles->currentPage()}}</span></li>
+							@endif
+						</ul>
+					</div>
+					<!-- /Pages navigation -->
 					<!-- <div id="nav_pages" class="nav_pages">
 						<ul>
 							<li class="pager_pages"><span>Page 1 of 6</span></li>
-							<li class="pager_first"><a href="#" title="&laquo; First">&laquo; First</a></li>
-							<li class="pager_prev"><a href="#">&laquo;</a></li>
+							<li class="pager_first"><a href="#" title="« First">« First</a></li>
+							<li class="pager_prev"><a href="#">«</a></li>
 							<li class="pager_current"><span title="">1</span></li>
 							<li><a href="#" title="2">2</a></li>
 							<li><a href="#" title="3">3</a></li>
 							<li><a href="#" title="4">4</a></li>
 							<li><a href="#" title="5">5</a></li>
-							<li class="pager_next"><a href="#">&raquo;</a></li>
-							<li class="pager_last"><a href="#" title="Last &raquo;">Last &raquo;</a></li>
+							<li class="pager_next"><a href="#">»</a></li>
+							<li class="pager_last"><a href="#" title="Last »">Last »</a></li>
 						</ul>
-					</div -->
-					<!-- /Pages navigation -->
-					{{ $articles->links() }}
+					</div> -->
 
 				</div><!-- #content -->
 

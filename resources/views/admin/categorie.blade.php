@@ -17,14 +17,24 @@
                   
                   <!-- Circle Buttons (Default) -->
 
-                  @foreach($categories as $cat)
-                  <div class="mb-2">
-                    <code class="text-primary text-center text-lg">{{$cat->nom}}</code>
-                    <a href="#" class="btn btn-success btn-circle">
-                      <i class="fas fa-check"></i>
-                    </a>
-                  </div><br/>
-                  @endforeach
+
+                  <table class="table table-bordered" id="dataTable" width="30%" cellspacing="0">
+                  <thead>
+                    <tr>
+                      <th>Id</th>
+                      <th>Nom</th>
+                    </tr>
+                  </thead>
+                  
+                  <tbody>
+                    @foreach($categories as $cat)   
+                    <tr>
+                      <td>{{$cat->id}}</td>
+                      <td>{{$cat->nom}}</td>
+                    </tr>
+                    @endforeach
+                  </tbody>
+                </table>
                   
                 </div>
               </div>

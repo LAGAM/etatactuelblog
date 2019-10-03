@@ -212,7 +212,6 @@
           <!-- Page level custom scripts -->
           <script src="{{asset('admin/js1/demo/chart-area-demo.js')}}"></script>
           <script src="{{asset('admin/js1/demo/chart-pie-demo.js')}}"></script>
-          <script src="{{asset('bootstrap-tagsinput.js')}}"></script>
 
           <!-- bootstrap -->
         </div>

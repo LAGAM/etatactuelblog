@@ -36,7 +36,7 @@
                       <td>{{$co->nom_auteur_comment}}</td>
                       <td>{{$co->contenu}}</td>
                       <td width="10%">
-            						<a class="btn btn-danger btn-circle" href="{{route('admin.commentDelete', [$co->id])}}" style="margin-left: 10px;" >
+            						<a class="btn btn-danger btn-circle" onclick="return confirm('Voulez vous vraiment supprimer cet article ?')" href="{{route('admin.commentDelete', [$co->id])}}" style="margin-left: 10px;" >
             							<i class="fas fa-trash"></i>
             						</a>
                       </td> 

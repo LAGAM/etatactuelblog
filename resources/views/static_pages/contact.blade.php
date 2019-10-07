@@ -19,18 +19,19 @@
                         <!-- Form for respond -->
                         <div id="respond" class="comment-respond">
                             <h3 id="reply-title" class="comment-reply-title">Laisser un commentaire <small><a rel="nofollow" id="cancel-comment-reply-link" href="#respond" style="display:none;">Cancel reply</a></small></h3>
-                            <form action="#" method="post" id="commentform" class="comment-form">
+                            <form action="{{route('contact')}}" method="post" id="commentform" class="comment-form">
+                                @csrf
                                 <p class="comment-form-author">
-                                    <label for="author" class="required">Nom <span class="required">(required)</span></label>
-                                    <input id="author" name="author" value="" size="30" aria-required="true" type="text">
+                                    <label for="nom" class="required">Nom <span class="required">(required)</span></label>
+                                    <input id="nom" name="nom" value="" size="30" aria-required="true" type="text">
                                 </p>
                                 <p class="comment-form-email">
                                     <label for="email" class="required">Email <span class="required">(required)</span></label>
-                                    <input id="email" name="email" value="" size="30" aria-required="true" type="text">
+                                    <input id="email" name="email" value="" size="30" aria-required="true" type="email">
                                 </p>
                                 <p class="comment-form-comment">
-                                    <label for="comment" class="required">Votre Message <span class="required">(required)</span></label>
-                                    <textarea id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea>
+                                    <label for="message" class="required">Votre Message <span class="required">(required)</span></label>
+                                    <textarea id="message" name="message" cols="45" rows="8" aria-required="true"></textarea>
                                 </p>
                                 <p class="form-submit">
                                     <input name="submit" id="submit" value="Submit" type="submit">
@@ -38,6 +39,19 @@
                                     <input name="comment_parent" id="comment_parent" value="0" type="hidden">
                                 </p>
                             </form>
+                            @if(session()->has('message'))
+                            <script type="text/javascript">    
+                                iziToast.warning({
+                                    title: 'Merci',
+                                    message: '{{ session()->get("message") }}',
+                                    image: '{{asset("public/avatar.png")}}',
+                                    imageWidth: 50,
+                                });      
+                            </script>
+                            <!-- <div class="alert alert-success">
+                                {{ session()->get('message') }}
+                            </div> -->
+                        @endif
                         </div>
                         <!-- /Form for respond -->
     

@@ -32,6 +32,8 @@ Route::get('index', 'IndexController@index')->name('index');
 Route::post('comment', 'CommentController@postComment')->name('comment'); 
 Route::get('articleListeTag{tag}','IndexController@indexTag')->name('tagArticleListe');
 Route::get('articleListeCategorie{id}','IndexController@indexCategorie')->name('categorieListeArticle');
+Route::post('abonnement', 'EmailController@subscribe')->name('abonnement');
+Route::post('contact', 'ContactController@contact')->name('contact');
 
 
 

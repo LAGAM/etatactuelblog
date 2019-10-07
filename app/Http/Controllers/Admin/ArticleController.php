@@ -5,9 +5,11 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Str;
 use App\Article;
 use App\User;
 use App\Categorie;
+use App\Tag;
 
 use App\Repository\PostRepository;
 use App\Http\Requests\PostRequest;
@@ -94,7 +96,7 @@ class ArticleController extends Controller
       return view('admin.editArticle', compact('editArt','editCategorie'))->with($data);
     }
 
-    public function update($id, Request $request, PostRepository $postRepository){
+    public function update($id, Request $request, Article $articles, TagRepository $tagRepository){
 
       if ($request->hasfile('image')){
             $file = $request->file('image');
@@ -112,9 +114,12 @@ class ArticleController extends Controller
         'enligne' => $request->input('ligne'),
         'categorie_id' => $request->input('categorie'),
         'image' => $filename,
-        'user_id' => $request->user()->id
+        'user_id' => $request->user()->id,
       ]);
-      
+
+      $tagUpdate = Tag::where('id','=',$id);
+      $tagUpdate->tag()->updateExistingPivot($id, $request->input('tags'));
+
       return redirect(route('admin.allArticle'));
     }
 

@@ -31,6 +31,10 @@
 	
 		<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 		<script type="text/javascript" src="template/js/jquery-migrate.js"></script>
+
+
+        <link rel="stylesheet" href="izitoast/dist/css/iziToast.min.css" />
+        <script src="izitoast/dist/js/iziToast.min.js" type="text/javascript"></script>
 		
 		<!--[if lt IE 9]>
 			<script src="js/html5.js" type="text/javascript"></script>
@@ -115,12 +119,28 @@
 					<aside class="widget-number-2 widget-number-4 newsletter widget widget_contact_form">
 						<h3 class="widget_title">La newletter</h3>
 						<div class="sc_contact_form">
-							<form method="post" action="php/sendform.php">
-								<div class="field"><input id="sc_contact_form_email" name="email" placeholder="Votre email*" type="text"></div>
-								<div class="button"><a href="#"><span>S'abonner</span></a></div>
+							<form method="post" action="{{route('abonnement')}}">
+								@csrf
+
+								<div class="field"><input id="sc_contact_form_email" name="email" placeholder="Votre email*" type="email"></div>
+								<!-- <div class="button"><a href="{{route('abonnement')}}"><span>S'abonner</span></a></div> -->
+								<input type="submit" name="">
 								<div class="result sc_infobox"></div>
 							</form>
 						</div>
+						@if(session()->has('message'))
+							<script type="text/javascript">    
+					            iziToast.success({
+					                title: 'Merci',
+					                message: '{{ session()->get("message") }}',
+					                image: 'public/avatar.png',
+					                imageWidth: 50,
+					            });      
+					        </script>
+						    <!-- <div class="alert alert-success">
+						        {{ session()->get('message') }}
+						    </div> -->
+						@endif
 					</aside>
 
 					<aside class="widget-number-4 widget widget_flickr">

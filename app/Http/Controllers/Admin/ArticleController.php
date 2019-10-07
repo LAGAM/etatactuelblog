@@ -73,7 +73,7 @@ class ArticleController extends Controller
           $tagRepository->store($article, $essai);
         }
     
-        return redirect(route('admin.dashboard'));
+        return redirect(route('admin.dashboard'))->with('message','Article créée avec succes');
     }
 
 

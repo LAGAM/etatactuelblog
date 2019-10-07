@@ -31,7 +31,7 @@ class SettingController extends Controller
                     'password' => Hash::make($mdp1),
                 ]);
                 if(isset($userUpdate)){
-                    return redirect(route('admin.dashboard'));
+                    return redirect(route('admin.dashboard'))->with('message','Les parametres d\'administration ont bien été modifié');
                 }
             }else{
                 return redirect()->back();

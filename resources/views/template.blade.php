@@ -130,7 +130,7 @@
 						</div>
 						@if(session()->has('message'))
 							<script type="text/javascript">    
-					            iziToast.success({
+					            iziToast.info({
 					                title: 'Merci',
 					                message: '{{ session()->get("message") }}',
 					                image: 'public/avatar.png',

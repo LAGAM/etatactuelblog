@@ -41,16 +41,14 @@
                             </form>
                             @if(session()->has('message'))
                             <script type="text/javascript">    
-                                iziToast.warning({
+                                iziToast.info({
                                     title: 'Merci',
                                     message: '{{ session()->get("message") }}',
                                     image: '{{asset("public/avatar.png")}}',
                                     imageWidth: 50,
                                 });      
                             </script>
-                            <!-- <div class="alert alert-success">
-                                {{ session()->get('message') }}
-                            </div> -->
+
                         @endif
                         </div>
                         <!-- /Form for respond -->

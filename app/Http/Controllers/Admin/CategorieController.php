@@ -34,7 +34,7 @@ class CategorieController extends Controller
 
             if ($categorie) {
                // flash('Opération réalisée avec succès !')->success();
-                return redirect()->route('admin.categorie');
+                return redirect()->route('admin.categorie')->with('message','Categorie créée avec succes');
             } else {
                //  flash('Opération non effectuée !')->error();
                 return redirect()->back()('admin.categorie');

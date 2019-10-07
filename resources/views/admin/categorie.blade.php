@@ -1,7 +1,7 @@
 @extends('layouts.base')
 @section('title', 'Catégorie')
 @section('content')
-    <a href=javascript:history.go(-1)  class="btn btn-warning btn-circle"> <i class="fas fa-arrow-circle-left fa-2x info"></i> </a><br/><br/>
+    <a href=javascript:history.go(-1)  class="btn btn-info btn-circle"> <i class="fas fa-arrow-circle-left fa-2x info"></i> </a><br/><br/>
     <h1 class="h3 mb-4 text-gray-800">Catégories</h1>
 
           <div class="row">
@@ -81,13 +81,17 @@
 
           </div>
 
+           @if(session()->has('message'))
+              <script type="text/javascript">    
+                  iziToast.info({
+                      title: 'Info',
+                      message: '{{ session()->get("message") }}',
+                      image: '{{asset("public/avatar.png")}}',
+                      imageWidth: 50,
+                  });      
+              </script>
 
-
-
-
-
-
-
+          @endif
 
     <!-- <h2 style="text-align:center; color:#91278E; font-weight:bold;">Enregistrer une nouvelle categorie<h2><br> -->
         

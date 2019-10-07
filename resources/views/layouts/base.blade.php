@@ -23,6 +23,9 @@
   <!-- Custom styles for this template-->
   <link href="{{asset('admin/css1/sb-admin-2.min.css')}}" rel="stylesheet">
 
+  <link rel="stylesheet" href="{{asset('izitoast/dist/css/iziToast.min.css')}}" />
+  <script src="{{asset('izitoast/dist/js/iziToast.min.js')}}" type="text/javascript"></script>
+
 </head>
 
 <body id="page-top">

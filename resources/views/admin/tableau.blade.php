@@ -156,6 +156,17 @@
   <a class="scroll-to-top rounded" href="#page-top">
     <i class="fas fa-angle-up"></i>
   </a>
+   @if(session()->has('message'))
+      <script type="text/javascript">    
+          iziToast.info({
+              title: 'Info',
+              message: '{{ session()->get("message") }}',
+              image: '{{asset("public/avatar.png")}}',
+              imageWidth: 50,
+          });      
+      </script>
+
+  @endif
 
   
   @endsection
